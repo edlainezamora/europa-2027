@@ -253,6 +253,9 @@
     $('#r-total-group').textContent = `${people === 1 ? 'Total' : 'Grupo'}: ${range(gMin, gMax)}`;
   };
 
+  seniorsInput.addEventListener('input', () => {
+    if (num(seniorsInput) > num(peopleInput)) peopleInput.value = Math.min(num(seniorsInput), Number(peopleInput.max));
+  });
   [peopleInput, seniorsInput, daysBcn, daysLdn, dailyInput].forEach((el) => el.addEventListener('input', renderCosts));
 
   /* ---------- cotação (atualiza sozinha quando há internet) ---------- */

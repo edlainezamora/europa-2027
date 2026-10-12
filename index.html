@@ -187,7 +187,6 @@
                   <tr><td><b>Urgência</b><small>Viagem marcada sem tempo de esperar (precisa comprovar)</small></td><td class="num">R$ 334,42</td></tr>
                   <tr><td><b>Sem o passaporte anterior</b><small>Perdeu o antigo quando ainda era válido</small></td><td class="num">R$ 514,50</td></tr>
                 </tbody>
-                <tfoot><tr><td>Nós 3 (passaporte comum)</td><td class="num">R$ 771,75</td></tr></tfoot>
               </table>
             </div>
             <p class="note">Valores de 2026. A Polícia Federal pode reajustar — confira no site antes de pagar.</p>
@@ -286,14 +285,14 @@
                   <tr><td>Até 59 anos</td><td class="num">R$ 180 a 375</td></tr>
                   <tr><td>60 a 70 anos<small>costuma custar uns 50% a mais</small></td><td class="num">R$ 270 a 560</td></tr>
                 </tbody>
-                <tfoot><tr><td data-ins-label>3 pessoas (2 com 60 anos ou mais)</td><td class="num" data-ins-group>R$ 720 a 1.495</td></tr></tfoot>
+                <tfoot><tr><td data-ins-label>1 pessoa (1 com 60 anos ou mais)</td><td class="num" data-ins-group>R$ 270 a 560</td></tr></tfoot>
               </table>
             </div>
             <div class="people people--inline">
               <span id="seniors-label">Quantos têm 60 anos ou mais?</span>
               <div class="stepper" data-stepper>
                 <button type="button" data-step="-1" aria-label="Menos uma pessoa com 60 anos ou mais">−</button>
-                <input type="number" id="seniors" value="2" min="0" max="10" inputmode="numeric" aria-labelledby="seniors-label">
+                <input type="number" id="seniors" value="1" min="0" max="10" inputmode="numeric" aria-labelledby="seniors-label">
                 <button type="button" data-step="1" aria-label="Mais uma pessoa com 60 anos ou mais">+</button>
               </div>
             </div>
@@ -612,7 +611,7 @@
           <span id="people-label">Quantas pessoas vão?</span>
           <div class="stepper" data-stepper>
             <button type="button" data-step="-1" aria-label="Menos uma pessoa">−</button>
-            <input type="number" id="people" value="3" min="1" max="10" inputmode="numeric" aria-labelledby="people-label">
+            <input type="number" id="people" value="1" min="1" max="10" inputmode="numeric" aria-labelledby="people-label">
             <button type="button" data-step="1" aria-label="Mais uma pessoa">+</button>
           </div>
         </div>
@@ -681,7 +680,7 @@
         </div>
 
         <h3 class="h3">🩺 Seguro viagem</h3>
-        <p>Para <span data-ins-label>3 pessoas (2 com 60 anos ou mais)</span>, 15 dias: <b data-ins-group>R$ 720 a 1.495</b> no total. Já está somado na calculadora lá embaixo. <a href="#seguro">Ver detalhes e onde cotar (Passo 2) ↑</a></p>
+        <p>Para <span data-ins-label>1 pessoa (1 com 60 anos ou mais)</span>, 15 dias: <b data-ins-group>R$ 270 a 560</b> no total. Já está somado na calculadora lá embaixo. <a href="#seguro">Ver detalhes e onde cotar (Passo 2) ↑</a></p>
 
         <h3 class="h3">🍽️ Gastos do dia a dia: €40 por pessoa</h3>
         <p>Os €40 são para <b>comida, transporte e pequenos gastos</b>. O hotel em Londres e os ingressos dos passeios ficam fora dessa conta. Em Barcelona não tem gasto com hospedagem: vamos ficar em casa 🏠.</p>
@@ -756,18 +755,18 @@
           <div class="calc__results" aria-live="polite">
             <div class="result">
               <span>Gastos do dia a dia, por pessoa</span>
-              <b id="r-daily-eur">€480</b>
-              <small id="r-daily-brl">≈ R$ 2.780</small>
+              <b id="r-daily-eur">€600</b>
+              <small id="r-daily-brl">≈ R$ 3.470</small>
             </div>
             <div class="result">
-              <span>Gastos do dia a dia, <em id="r-people-txt">3 pessoas</em></span>
-              <b id="r-group-eur">€1.440</b>
-              <small id="r-group-brl">≈ R$ 8.340</small>
+              <span>Gastos do dia a dia, <em id="r-people-txt">1 pessoa</em></span>
+              <b id="r-group-eur">€600</b>
+              <small id="r-group-brl">≈ R$ 3.470</small>
             </div>
             <div class="result result--big">
               <span>Viagem completa, por pessoa*</span>
-              <b id="r-total-pp">R$ 8.700 a 12.400</b>
-              <small id="r-total-group">Grupo: R$ 26.100 a 37.200</small>
+              <b id="r-total-pp">R$ 10.200 a 11.400</b>
+              <small id="r-total-group">Total: R$ 10.200 a 11.400</small>
             </div>
           </div>
           <p class="note">* Soma passagens + gastos do dia a dia + seguro viagem + passaporte + ETA. <b>Não inclui hotel em Londres nem ingressos.</b> Os reais já contam o IOF e a taxa do Wise (cerca de 4%).</p>
