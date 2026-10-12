@@ -1481,7 +1481,7 @@ small { font-size: .85em; }
 }
 .receipt__sub { color: var(--ink-2); font-size: .95rem; margin-bottom: 16px; }
 .receipt__table tbody th[scope="row"] { font-weight: 700; }
-.receipt__table td:nth-child(2) { color: var(--ink-2); font-size: .92rem; }
+.receipt__table tbody td:nth-child(2) { color: var(--ink-2); font-size: .92rem; }
 .receipt__table .ct-cat th {
   padding-top: 18px;
   background: #F6F0E6;
