@@ -766,6 +766,8 @@ small { font-size: .85em; }
   gap: 22px;
   margin-top: 24px;
 }
+/* deixa tabelas e textos longos encolherem dentro da grade (evita rolagem lateral no celular) */
+.grid-2 > *, .grid-3 > *, .explain > *, .hero__grid > *, .cards > *, .guide > *, .phases > * { min-width: 0; }
 @media (min-width: 820px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 980px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
 
@@ -778,6 +780,10 @@ small { font-size: .85em; }
   box-shadow: var(--shadow);
 }
 .card--flat { box-shadow: none; }
+@media (max-width: 600px) {
+  .card { padding: 20px 18px; }
+  .card .table th, .card .table td { padding: 12px; }
+}
 .card__title {
   font-size: 1.3rem;
   margin-bottom: 14px;
@@ -988,6 +994,11 @@ small { font-size: .85em; }
 .table tbody tr:last-child th,
 .table tbody tr:last-child td { border-bottom-color: var(--line); }
 .table--compact th, .table--compact td { padding: 10px 14px; }
+.table--compact td:nth-child(2) { white-space: nowrap; }
+@media (max-width: 600px) {
+  .table--compact th, .table--compact td { padding: 10px 10px; }
+  .table--compact thead th { letter-spacing: 0; }
+}
 .row-hl td { background: var(--accent-soft); }
 
 /* tabela vira "cartões" no celular (classe colocada pelo JS) */
@@ -1334,9 +1345,10 @@ small { font-size: .85em; }
 }
 .budget__head {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  gap: 10px 12px;
   margin-bottom: 14px;
 }
 .budget__head h4 { font-size: 1.25rem; font-family: "Fraunces", Georgia, serif; font-weight: 800; }
@@ -1675,13 +1687,12 @@ small { font-size: .85em; }
   text-align: center;
 }
 .sos__item p { margin: 0; }
+@media (max-width: 600px) { .sos__num { min-width: 1.6em; font-size: 2.1rem; } }
 .sos__item a { font-weight: 700; white-space: nowrap; }
 
 /* ---------- navegação entre seções ---------- */
 .next {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  display: inline-block;
   margin-top: 52px;
   padding: 16px 26px;
   min-height: 60px;
@@ -1695,7 +1706,7 @@ small { font-size: .85em; }
 .next:hover { transform: translateX(4px); box-shadow: var(--shadow-lift); }
 .next--top:hover { transform: translateY(-3px); }
 @media (max-width: 600px) {
-  .next { display: flex; justify-content: center; text-align: center; }
+  .next { display: block; text-align: center; }
 }
 
 /* ---------- rodapé ---------- */
