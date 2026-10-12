@@ -24,6 +24,7 @@
 
   /* uma cor para cada seção (todas com contraste bom para texto branco) */
   --c-pass: #1D3557;  --c-pass-soft: #E6EDF7;
+  --c-ins:  #0E7490;  --c-ins-soft:  #DDF1F6;
   --c-wise: #2B7A3D;  --c-wise-soft: #E4F2E6;
   --c-chip: #6A3DB8;  --c-chip-soft: #EFE8FA;
   --c-cost: #96600F;  --c-cost-soft: #FCF0D9;
@@ -760,6 +761,7 @@ small { font-size: .85em; }
   max-width: 52em;
 }
 .summary strong { color: var(--accent); }
+.summary + .explain { margin-top: 44px; }
 
 .h3 {
   margin: 48px 0 18px;

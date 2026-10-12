@@ -236,8 +236,9 @@
     const young = people - seniors;
     const insMin = young * INSURANCE.young[0] + seniors * INSURANCE.senior[0];
     const insMax = young * INSURANCE.young[1] + seniors * INSURANCE.senior[1];
-    $('#ins-label').textContent = `${people === 1 ? '1 pessoa' : `${people} pessoas`} (${seniors} com 60 anos ou mais)`;
-    $('#ins-group').textContent = range(insMin, insMax);
+    const insLabel = `${people === 1 ? '1 pessoa' : `${people} pessoas`} (${seniors} com 60 anos ou mais)`;
+    $$('[data-ins-label]').forEach((el) => { el.textContent = insLabel; });
+    $$('[data-ins-group]').forEach((el) => { el.textContent = range(insMin, insMax); });
 
     // viagem completa (sem hotel em Londres e ingressos)
     const fixedPP = brlPP + PASSPORT_FEE + ETA_GBP * rates.gbp;
