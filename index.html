@@ -1,0 +1,1123 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Europa 2027 · Barcelona e Londres</title>
+  <meta name="description" content="Nosso guia de viagem: passaporte, cartão Wise, chip de internet, custos, compras e passeios em Barcelona e Londres.">
+  <meta name="theme-color" content="#1D3557">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈️</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#comecar">Pular para o conteúdo</a>
+
+  <!-- ============ TOPO ============ -->
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a href="#inicio" class="brand" aria-label="Europa 2027 — voltar ao início">
+        <span class="brand__icon" aria-hidden="true">✈️</span>
+        <span>Europa <b>2027</b></span>
+      </a>
+      <div class="topbar__tools">
+        <div class="fontsize" role="group" aria-label="Tamanho da letra">
+          <span class="fontsize__label">Letra</span>
+          <button type="button" data-font="down" aria-label="Diminuir o tamanho da letra">A−</button>
+          <button type="button" data-font="up" aria-label="Aumentar o tamanho da letra">A+</button>
+        </div>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">
+          <span class="menu-btn__icon" aria-hidden="true"></span>
+          <span>Menu</span>
+        </button>
+      </div>
+    </div>
+    <nav class="subnav" aria-label="Seções do site"><ul id="subnav-list"></ul></nav>
+  </header>
+
+  <div class="menu" id="menu" hidden>
+    <div class="menu__panel" role="dialog" aria-modal="true" aria-label="Menu de seções">
+      <div class="menu__head">
+        <p class="menu__title">Para onde você quer ir?</p>
+        <button type="button" class="menu__close" data-close-menu>✕ Fechar</button>
+      </div>
+      <ul class="menu__list" id="menu-list"></ul>
+    </div>
+  </div>
+
+  <main id="conteudo">
+
+    <!-- ============ CAPA ============ -->
+    <section id="inicio" class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow">Nosso guia de viagem</p>
+          <h1>Europa <span class="hl">2027</span></h1>
+          <p class="hero__cities">
+            <span>🇪🇸 Barcelona</span>
+            <span class="amp" aria-hidden="true">&amp;</span>
+            <span>🇬🇧 Londres</span>
+          </p>
+          <p class="hero__intro">
+            Tudo o que a gente precisa saber, explicado passo a passo: documentos, dinheiro,
+            internet no celular, custos e os passeios. Use o botão <b>Menu</b> lá em cima
+            ou os quadrados coloridos aqui embaixo.
+          </p>
+
+          <div class="countdown" id="countdown">
+            <div class="countdown__show" aria-live="polite">
+              <span class="countdown__num" id="cd-days">?</span>
+              <span class="countdown__label" id="cd-label">Coloque a data da viagem para ver quantos dias faltam</span>
+            </div>
+            <label class="countdown__edit">
+              <span>📅 Data da ida</span>
+              <input type="date" id="cd-date" min="2026-01-01" max="2028-12-31">
+            </label>
+          </div>
+        </div>
+
+        <div class="hero__art" aria-hidden="true">
+          <figure class="postcard postcard--bcn">
+            <img style="object-position: center 30%" src="assets/img/bcn-sagrada.jpg" alt="" width="549" height="800">
+            <figcaption>Barcelona</figcaption>
+            <span class="stamp">ES</span>
+          </figure>
+          <figure class="postcard postcard--ldn">
+            <img style="object-position: center 18%" src="assets/img/ldn-bigben.jpg" alt="" width="450" height="800">
+            <figcaption>London</figcaption>
+            <span class="stamp stamp--uk">UK</span>
+          </figure>
+          <span class="postmark">EUROPA<br>· 2027 ·</span>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <ol class="route" aria-label="Roteiro da viagem">
+          <li><span class="route__flag">🇧🇷</span><strong>São Paulo</strong><span>Partida</span></li>
+          <li><span class="route__flag">🇪🇸</span><strong>Barcelona</strong><span>Espanha · paga em euro (€)</span></li>
+          <li><span class="route__flag">🇬🇧</span><strong>Londres</strong><span>Inglaterra · paga em libra (£)</span></li>
+          <li><span class="route__flag">🏠</span><strong>Volta pra casa</strong><span>Com muitas fotos!</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ POR ONDE COMEÇAR ============ -->
+    <section id="comecar" class="start" aria-labelledby="start-title">
+      <div class="wrap">
+        <h2 id="start-title" class="start__title">Por onde começar? <span>Siga os passos na ordem 👇</span></h2>
+        <ol class="tiles">
+          <li><a class="tile" style="--accent: var(--c-pass)" href="#passaporte"><span class="tile__num">1</span><span class="tile__icon" aria-hidden="true">🛂</span><strong>Passaporte</strong><span>Como tirar e quanto custa</span></a></li>
+          <li><a class="tile" style="--accent: var(--c-wise)" href="#wise"><span class="tile__num">2</span><span class="tile__icon" aria-hidden="true">💳</span><strong>Cartão Wise</strong><span>Dinheiro em euro no cartão</span></a></li>
+          <li><a class="tile" style="--accent: var(--c-chip)" href="#chip"><span class="tile__num">3</span><span class="tile__icon" aria-hidden="true">📶</span><strong>Internet no celular</strong><span>Chip virtual da Nomad</span></a></li>
+          <li><a class="tile" style="--accent: var(--c-cost)" href="#custos"><span class="tile__num">4</span><span class="tile__icon" aria-hidden="true">💶</span><strong>Quanto vamos gastar</strong><span>Voos e €40 por dia</span></a></li>
+          <li><a class="tile" style="--accent: var(--c-shop)" href="#compras"><span class="tile__num">5</span><span class="tile__icon" aria-hidden="true">🛍️</span><strong>Compras baratas</strong><span>Lojas e brechós em Barcelona</span></a></li>
+          <li><a class="tile" style="--accent: var(--c-bcn)" href="#barcelona"><span class="tile__num">6</span><span class="tile__icon" aria-hidden="true">⛪</span><strong>Passeios em Barcelona</strong><span>Sagrada Família, praia e mais</span></a></li>
+          <li><a class="tile" style="--accent: var(--c-ldn)" href="#londres"><span class="tile__num">7</span><span class="tile__icon" aria-hidden="true">🎡</span><strong>Passeios em Londres</strong><span>Big Ben, London Eye e mais</span></a></li>
+          <li><a class="tile" style="--accent: var(--c-check)" href="#checklist"><span class="tile__num">8</span><span class="tile__icon" aria-hidden="true">✅</span><strong>Checklist</strong><span>Não esquecer nada</span></a></li>
+          <li><a class="tile" style="--accent: var(--c-talk)" href="#frases"><span class="tile__num">9</span><span class="tile__icon" aria-hidden="true">🗣️</span><strong>Frases e emergência</strong><span>Ouça a pronúncia</span></a></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 1. PASSAPORTE ============ -->
+    <section id="passaporte" class="section" style="--accent: var(--c-pass); --accent-soft: var(--c-pass-soft)" data-icon="🛂" data-label="Passaporte">
+      <div class="wrap">
+        <header class="section__head">
+          <span class="step">Passo 1</span>
+          <h2><span class="section__icon" aria-hidden="true">🛂</span> Passaporte</h2>
+          <p class="lead">Sem passaporte não se entra na Espanha nem na Inglaterra. É o primeiro documento a providenciar, porque pode demorar algumas semanas.</p>
+        </header>
+
+        <div class="summary">
+          <strong>Em 1 minuto:</strong> preencha o pedido no site da Polícia Federal, pague a taxa de
+          <b>R$ 257,25</b>, agende um horário, vá à PF com seus documentos e volte para buscar o passaporte
+          pronto. Ele vale <b>10 anos</b>.
+        </div>
+
+        <h3 class="h3">Passo a passo</h3>
+        <ol class="steps">
+          <li>
+            <h4>Preencha o pedido pela internet</h4>
+            <p>Entre no site da Polícia Federal, clique em <b>“Solicitar passaporte”</b> e preencha seus dados. No final, guarde o número do protocolo.</p>
+            <a class="btn btn--accent" href="https://www.gov.br/pf/pt-br/assuntos/passaporte" target="_blank" rel="noopener">Abrir site da Polícia Federal ↗</a>
+          </li>
+          <li>
+            <h4>Pague a taxa (boleto GRU)</h4>
+            <p>O próprio site gera o boleto. Pode pagar no aplicativo do banco, no caixa eletrônico ou na lotérica.</p>
+          </li>
+          <li>
+            <h4>Agende o atendimento</h4>
+            <p>Depois do pagamento, escolha o posto da PF, o dia e o horário. Em cidades grandes as vagas acabam rápido — agende logo.</p>
+          </li>
+          <li>
+            <h4>Vá à Polícia Federal no dia marcado</h4>
+            <p>Leve os documentos <b>originais</b> da lista abaixo. A foto e as digitais são feitas lá mesmo — não precisa levar foto.</p>
+          </li>
+          <li>
+            <h4>Busque o passaporte</h4>
+            <p>Normalmente fica pronto em cerca de <b>6 dias úteis</b>. A retirada é pessoal, no mesmo posto onde foi feito o atendimento.</p>
+          </li>
+        </ol>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3 class="card__title">📄 O que levar no dia</h3>
+            <ul class="checks">
+              <li>Documento de identidade original (RG ou CNH)</li>
+              <li>CPF (se não estiver no documento)</li>
+              <li>Título de eleitor e comprovante de que votou na última eleição (ou certidão de quitação eleitoral, tirada no site do TSE)</li>
+              <li>Passaporte antigo, se tiver (mesmo vencido)</li>
+              <li>Homens de 18 a 45 anos: certificado de reservista</li>
+              <li>Comprovante de pagamento da taxa e o protocolo do pedido</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 class="card__title">💰 Quanto custa</h3>
+            <div class="table-wrap">
+              <table class="table">
+                <thead><tr><th scope="col">Tipo</th><th scope="col" class="num">Valor por pessoa</th></tr></thead>
+                <tbody>
+                  <tr><td><b>Passaporte comum</b><small>Primeira vez ou renovação levando o antigo</small></td><td class="num">R$ 257,25</td></tr>
+                  <tr><td><b>Urgência</b><small>Viagem marcada sem tempo de esperar (precisa comprovar)</small></td><td class="num">R$ 334,42</td></tr>
+                  <tr><td><b>Sem o passaporte anterior</b><small>Perdeu o antigo quando ainda era válido</small></td><td class="num">R$ 514,50</td></tr>
+                </tbody>
+                <tfoot><tr><td>Nós 3 (passaporte comum)</td><td class="num">R$ 771,75</td></tr></tfoot>
+              </table>
+            </div>
+            <p class="note">Valores de 2026. A Polícia Federal pode reajustar — confira no site antes de pagar.</p>
+          </div>
+        </div>
+
+        <div class="callout callout--warn">
+          <span class="callout__icon" aria-hidden="true">⏰</span>
+          <div>
+            <strong>Já tem passaporte? Confira a validade.</strong>
+            Para entrar na Espanha, ele precisa valer pelo menos <b>3 meses depois da data da volta</b>.
+            Para ficar tranquilo, o ideal é que valha <b>6 meses ou mais</b> depois da volta. Se não tiver,
+            peça o novo com pelo menos 3 meses de antecedência.
+          </div>
+        </div>
+
+        <h3 class="h3">Outros documentos da viagem</h3>
+        <div class="grid-2">
+          <div class="card card--flat">
+            <h4 class="card__title">🇬🇧 ETA — autorização para a Inglaterra</h4>
+            <p>Brasileiros precisam pedir a <b>ETA</b> (autorização eletrônica) antes de viajar para o Reino Unido. Pede pelo celular, no app oficial <b>“UK ETA”</b>, ou pelo site do governo britânico.</p>
+            <ul class="facts">
+              <li><span>Custo</span><b>£20 <small data-gbp="20">(≈ R$ 132)</small> por pessoa</b></li>
+              <li><span>Validade</span><b>2 anos</b></li>
+              <li><span>Resposta</span><b>em geral até 3 dias úteis</b></li>
+            </ul>
+            <a class="btn btn--ghost" href="https://www.gov.uk/eta" target="_blank" rel="noopener">Site oficial da ETA (em inglês) ↗</a>
+          </div>
+          <div class="card card--flat">
+            <h4 class="card__title">🇪🇺 ETIAS — autorização para a Europa</h4>
+            <p>Uma autorização parecida para a Espanha e o resto da Europa. <b>Ainda não está valendo:</b> a União Europeia adiou o início para 2027, sem data marcada.</p>
+            <ul class="facts">
+              <li><span>Custo previsto</span><b>€20 por pessoa</b></li>
+              <li><span>Isentos</span><b>maiores de 70 anos</b></li>
+              <li><span>Validade</span><b>3 anos</b></li>
+            </ul>
+            <a class="btn btn--ghost" href="https://travel-europe.europa.eu/etias_pt" target="_blank" rel="noopener">Confira se já começou ↗</a>
+          </div>
+          <div class="card card--flat">
+            <h4 class="card__title">🩺 Seguro viagem</h4>
+            <p><b>Obrigatório para entrar na Espanha.</b> Precisa cobrir pelo menos <b>€30.000</b> em despesas médicas. Alguns cartões de crédito já oferecem o seguro de graça — vale perguntar ao banco. Leve a apólice impressa.</p>
+          </div>
+          <div class="card card--flat">
+            <h4 class="card__title">🧾 Na imigração do aeroporto</h4>
+            <p>Podem pedir: <b>passagem de volta</b>, <b>reservas de hotel</b>, <b>seguro viagem</b> e prova de que tem dinheiro para a viagem. Na primeira entrada na Europa tiram <b>foto e digitais</b> numa máquina — é normal, faz parte do sistema novo.</p>
+          </div>
+        </div>
+
+        <a class="next" href="#wise">Próximo passo: <b>Cartão Wise</b> →</a>
+      </div>
+    </section>
+
+    <!-- ============ 2. WISE ============ -->
+    <section id="wise" class="section section--tint" style="--accent: var(--c-wise); --accent-soft: var(--c-wise-soft)" data-icon="💳" data-label="Cartão Wise">
+      <div class="wrap">
+        <header class="section__head">
+          <span class="step">Passo 2</span>
+          <h2><span class="section__icon" aria-hidden="true">💳</span> Cartão Wise</h2>
+          <p class="lead">O jeito mais fácil e barato de levar dinheiro para a viagem.</p>
+        </header>
+
+        <div class="explain">
+          <div class="explain__text">
+            <h3 class="h3">Para que serve?</h3>
+            <p>O Wise é como uma <b>carteira de dinheiro estrangeiro dentro do celular</b>, com um cartão de verdade.</p>
+            <p>Aqui no Brasil você coloca reais pelo <b>Pix</b>, o aplicativo troca por <b>euros</b> (ou libras), e lá na Europa você usa o cartão para pagar restaurantes, lojas, metrô e até sacar dinheiro — como se fosse um cartão de lá.</p>
+            <p>É <b>mais barato</b> do que usar o cartão de crédito brasileiro e <b>mais seguro</b> do que andar com muito dinheiro vivo. E se perder o cartão, dá para bloquear na hora pelo app.</p>
+          </div>
+          <ol class="flow" aria-label="Como o dinheiro passa pelo Wise">
+            <li><span aria-hidden="true">🇧🇷</span><b>Seus reais</b><small>no banco</small></li>
+            <li><span aria-hidden="true">📱</span><b>Pix para o Wise</b><small>na hora</small></li>
+            <li><span aria-hidden="true">💶</span><b>Vira euro</b><small>no cartão</small></li>
+            <li><span aria-hidden="true">🛍️</span><b>Paga em Barcelona</b><small>aproximando o cartão</small></li>
+          </ol>
+        </div>
+
+        <div class="stores">
+          <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.transferwise.android&amp;hl=pt_BR" target="_blank" rel="noopener"><span aria-hidden="true">🤖</span><span><small>Baixar Wise para</small>Android</span></a>
+          <a class="store-btn" href="https://apps.apple.com/br/app/wise-ex-transferwise/id612261027" target="_blank" rel="noopener"><span aria-hidden="true">🍎</span><span><small>Baixar Wise para</small>iPhone</span></a>
+        </div>
+
+        <div class="guide">
+          <article class="guide__step">
+            <span class="guide__num">1</span>
+            <h3>Criar a conta</h3>
+            <ol>
+              <li>Abra o app Wise e toque em <b>“Criar conta”</b>.</li>
+              <li>Coloque seu e-mail e crie uma senha.</li>
+              <li>Escolha <b>“Conta pessoal”</b> e preencha nome, CPF, data de nascimento, endereço e celular.</li>
+              <li>Tire uma foto do RG ou da CNH e uma <b>selfie</b> (foto do rosto).</li>
+              <li>Aguarde a aprovação — leva de alguns minutos a 2 dias.</li>
+            </ol>
+          </article>
+          <article class="guide__step">
+            <span class="guide__num">2</span>
+            <h3>Pedir o cartão</h3>
+            <ol>
+              <li>Na tela inicial, toque em <b>“Cartão”</b>.</li>
+              <li>Toque em <b>“Pedir cartão”</b> e escolha o cartão físico.</li>
+              <li>Confira o endereço de entrega. Se houver alguma taxa, o app mostra antes de confirmar.</li>
+              <li>O cartão chega pelo correio, em geral em 1 a 2 semanas.</li>
+              <li>Quando chegar, toque em <b>“Ativar cartão”</b> no app. A senha (PIN) também aparece no app.</li>
+            </ol>
+          </article>
+          <article class="guide__step">
+            <span class="guide__num">3</span>
+            <h3>Colocar dinheiro pelo Pix</h3>
+            <ol>
+              <li>Na tela inicial, toque em <b>“Adicionar”</b>.</li>
+              <li>Escolha a moeda: <b>EUR (euro)</b>.</li>
+              <li>Digite quanto quer colocar. O app mostra <b>quantos euros você vai receber</b> e as taxas.</li>
+              <li>Escolha pagar com <b>Pix</b> e copie o código.</li>
+              <li>Abra o app do seu banco, vá em <b>Pix → Pix Copia e Cola</b>, cole e pague.</li>
+              <li>Pronto! Em poucos minutos os euros aparecem no Wise.</li>
+            </ol>
+          </article>
+          <article class="guide__step">
+            <span class="guide__num">4</span>
+            <h3>Trocar para euro (e libra)</h3>
+            <p>Se você escolheu <b>EUR</b> no passo 3, o dinheiro já chega <b>em euro</b>. Não precisa fazer mais nada para Barcelona.</p>
+            <p><b>Para Londres</b>, que usa libra (£):</p>
+            <ol>
+              <li>Toque em <b>“Converter”</b>.</li>
+              <li>Escolha <b>de EUR para GBP</b> (libra).</li>
+              <li>Digite o valor, confira e toque em <b>“Confirmar”</b>.</li>
+            </ol>
+            <p class="note">Esqueceu de converter? Tudo bem: o cartão troca sozinho na hora da compra.</p>
+          </article>
+        </div>
+
+        <div class="grid-2 tips-row">
+          <div class="pos" aria-hidden="true">
+            <div class="pos__screen">
+              <p>Pagar em qual moeda?</p>
+              <div class="pos__opt pos__opt--yes">EUR € <span>✓ ESCOLHA ESTA</span></div>
+              <div class="pos__opt pos__opt--no">BRL R$ <span>✗ mais caro</span></div>
+            </div>
+            <div class="pos__keys"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="card card--flat">
+            <h3 class="card__title">🌟 Dicas de ouro</h3>
+            <ul class="checks">
+              <li>Se a maquininha ou o caixa eletrônico perguntar <b>“EUR ou BRL?”</b>, escolha sempre <b>EUR</b> (em Londres, <b>GBP</b>). Escolher reais sai mais caro.</li>
+              <li>Para sacar dinheiro vivo, prefira caixas eletrônicos de <b>bancos</b>. Evite os da marca <b>Euronet</b> nos pontos turísticos: cobram caro.</li>
+              <li>O governo cobra <b>IOF</b> em cada recarga (hoje 3,5%). O app já mostra esse valor antes de confirmar.</li>
+              <li>Perdeu o cartão? No app, toque em <b>Cartão → Congelar</b>. Bloqueia na hora.</li>
+              <li>Leve também um cartão de crédito brasileiro de reserva, para emergências.</li>
+            </ul>
+          </div>
+        </div>
+
+        <a class="next" href="#chip">Próximo passo: <b>Internet no celular</b> →</a>
+      </div>
+    </section>
+
+    <!-- ============ 3. CHIP NOMAD ============ -->
+    <section id="chip" class="section" style="--accent: var(--c-chip); --accent-soft: var(--c-chip-soft)" data-icon="📶" data-label="Internet (Nomad)">
+      <div class="wrap">
+        <header class="section__head">
+          <span class="step">Passo 3</span>
+          <h2><span class="section__icon" aria-hidden="true">📶</span> Internet no celular: Nomad</h2>
+          <p class="lead">Para usar WhatsApp, mapa, Uber e mandar fotos sem pagar o roaming caro da operadora brasileira.</p>
+        </header>
+
+        <div class="explain">
+          <div class="explain__text">
+            <h3 class="h3">Para que serve?</h3>
+            <p>No aplicativo <b>Nomad</b> a gente compra um <b>eSIM</b>, que é um <b>chip virtual</b>: não precisa abrir o celular nem trocar chip. Ele é instalado pelo próprio celular, em poucos minutos.</p>
+            <p>Seu chip brasileiro continua no celular. <b>O WhatsApp continua com o mesmo número</b> — só a internet passa a vir da Nomad.</p>
+          </div>
+          <div class="card card--flat compat">
+            <h3 class="card__title">📱 Meu celular aceita eSIM?</h3>
+            <p>Abra o teclado de ligação e digite:</p>
+            <p class="dial">*#06#</p>
+            <p>Se aparecer um número chamado <b>EID</b>, o celular aceita eSIM. 🎉</p>
+            <p class="note">Em geral funcionam: iPhone XR ou mais novo, Samsung Galaxy S20 ou mais novo, e muitos Motorola e Xiaomi recentes.</p>
+          </div>
+        </div>
+
+        <div class="stores">
+          <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.nomadfintech.bank.app.android&amp;hl=pt_BR" target="_blank" rel="noopener"><span aria-hidden="true">🤖</span><span><small>Baixar Nomad para</small>Android</span></a>
+          <a class="store-btn" href="https://apps.apple.com/br/app/nomad-conta-digital-em-d%C3%B3lar/id1485257309" target="_blank" rel="noopener"><span aria-hidden="true">🍎</span><span><small>Baixar Nomad para</small>iPhone</span></a>
+        </div>
+
+        <h3 class="h3">Comprar o chip</h3>
+        <ol class="steps steps--compact">
+          <li><h4>Crie sua conta no app Nomad</h4><p>Com CPF, foto do documento e selfie — parecido com o Wise.</p></li>
+          <li><h4>Toque em “Nomad Chip” (ou “Viagens”)</h4><p>Escolha o destino <b>Europa</b>. Antes de pagar, abra a lista de países do plano e confira se tem <b>Espanha e Reino Unido</b>. Se o Reino Unido não estiver, compre também um plano de Reino Unido.</p></li>
+          <li><h4>Escolha o pacote e pague</h4><p>O app mostra as formas de pagamento. Você recebe um <b>QR Code</b> no app e no e-mail.</p></li>
+        </ol>
+
+        <div class="card card--flat">
+          <h3 class="card__title">💵 Preços dos pacotes Europa (por pessoa)</h3>
+          <div class="table-wrap">
+            <table class="table table--compact">
+              <thead><tr><th scope="col">Internet</th><th scope="col">Dura</th><th scope="col" class="num">Preço</th></tr></thead>
+              <tbody>
+                <tr><td>1 GB</td><td>7 dias</td><td class="num">US$ 4</td></tr>
+                <tr><td>3 GB</td><td>30 dias</td><td class="num">US$ 13</td></tr>
+                <tr><td>5 GB</td><td>30 dias</td><td class="num">US$ 19,50</td></tr>
+                <tr class="row-hl"><td><b>10 GB</b> ⭐ boa escolha</td><td>30 dias</td><td class="num">US$ 30</td></tr>
+                <tr><td>20 GB</td><td>30 dias</td><td class="num">US$ 36</td></tr>
+                <tr><td>Ilimitado</td><td>15 dias</td><td class="num">US$ 40</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">Preços vistos no site da Nomad em outubro de 2026. Para uns 12 dias usando WhatsApp, mapa e fotos, 10 GB costuma bastar.</p>
+        </div>
+
+        <h3 class="h3" id="chip-howto">Instalar, ativar e desativar</h3>
+        <div class="tabs" data-tabs="phone">
+          <p class="tabs__ask">Qual é o seu celular?</p>
+          <div class="tabs__list" role="tablist" aria-label="Tipo de celular">
+            <button role="tab" type="button" id="tab-iphone" aria-controls="panel-iphone" aria-selected="true">🍎 iPhone</button>
+            <button role="tab" type="button" id="tab-android" aria-controls="panel-android" aria-selected="false" tabindex="-1">🤖 Android</button>
+          </div>
+
+          <div class="tabs__panel" role="tabpanel" id="panel-iphone" aria-labelledby="tab-iphone">
+            <div class="phases">
+              <article class="phase">
+                <p class="phase__when">🏠 Ainda no Brasil, no Wi-Fi</p>
+                <h4>1. Instalar</h4>
+                <ol>
+                  <li>Abra <b>Ajustes</b> e toque em <b>Celular</b>.</li>
+                  <li>Toque em <b>Adicionar eSIM</b> (ou “Adicionar Plano Celular”).</li>
+                  <li>Escolha <b>Usar Código QR</b> e aponte para o QR Code da Nomad (no e-mail, aberto em outra tela ou impresso).</li>
+                  <li>Dê um nome fácil, como <b>“Viagem”</b>.</li>
+                  <li>Em “Linha padrão”, deixe o <b>chip brasileiro</b>.</li>
+                </ol>
+              </article>
+              <article class="phase phase--go">
+                <p class="phase__when">🛬 Quando chegar na Europa</p>
+                <h4>2. Ativar</h4>
+                <ol>
+                  <li>Abra <b>Ajustes → Celular</b>.</li>
+                  <li>Toque na linha <b>“Viagem”</b> e ligue <b>Ativar esta Linha</b>.</li>
+                  <li>Ligue <b>Roaming de Dados</b> nessa linha.</li>
+                  <li>Volte e toque em <b>Dados Celulares</b> → escolha <b>“Viagem”</b>.</li>
+                  <li>No chip brasileiro, deixe o <b>Roaming de Dados desligado</b> (para não vir conta alta).</li>
+                </ol>
+              </article>
+              <article class="phase phase--stop">
+                <p class="phase__when">✈️ Na volta para o Brasil</p>
+                <h4>3. Desativar</h4>
+                <ol>
+                  <li>Abra <b>Ajustes → Celular</b>.</li>
+                  <li>Toque em <b>Dados Celulares</b> e escolha o <b>chip brasileiro</b>.</li>
+                  <li>Toque na linha <b>“Viagem”</b> e desligue <b>Ativar esta Linha</b>.</li>
+                  <li>Só apague o eSIM quando o pacote tiver acabado e você não for usar de novo.</li>
+                </ol>
+              </article>
+            </div>
+          </div>
+
+          <div class="tabs__panel" role="tabpanel" id="panel-android" aria-labelledby="tab-android" hidden>
+            <div class="phases">
+              <article class="phase">
+                <p class="phase__when">🏠 Ainda no Brasil, no Wi-Fi</p>
+                <h4>1. Instalar</h4>
+                <ol>
+                  <li>Abra <b>Configurações</b> → <b>Conexões</b> (ou “Rede e internet”).</li>
+                  <li>Toque em <b>Gerenciador de chip</b> (ou “Cartões SIM”).</li>
+                  <li>Toque em <b>Adicionar eSIM</b> (ou no “+”).</li>
+                  <li>Escaneie o QR Code da Nomad, ou toque em “Inserir código de ativação” e cole o código do app.</li>
+                  <li>Toque em <b>Adicionar</b> e espere terminar.</li>
+                </ol>
+              </article>
+              <article class="phase phase--go">
+                <p class="phase__when">🛬 Quando chegar na Europa</p>
+                <h4>2. Ativar</h4>
+                <ol>
+                  <li>Abra <b>Configurações → Conexões → Gerenciador de chip</b>.</li>
+                  <li><b>Ligue</b> o eSIM da Nomad.</li>
+                  <li>Em <b>Dados móveis</b>, escolha o eSIM da Nomad.</li>
+                  <li>Ligue o <b>Roaming</b> do eSIM da Nomad.</li>
+                  <li>No chip brasileiro, deixe o <b>Roaming desligado</b> (para não vir conta alta).</li>
+                </ol>
+              </article>
+              <article class="phase phase--stop">
+                <p class="phase__when">✈️ Na volta para o Brasil</p>
+                <h4>3. Desativar</h4>
+                <ol>
+                  <li>Abra <b>Configurações → Conexões → Gerenciador de chip</b>.</li>
+                  <li>Em <b>Dados móveis</b>, volte para o <b>chip brasileiro</b>.</li>
+                  <li><b>Desligue</b> o eSIM da Nomad.</li>
+                  <li>Só apague o eSIM quando o pacote tiver acabado e você não for usar de novo.</li>
+                </ol>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <span class="callout__icon" aria-hidden="true">💡</span>
+          <div>
+            <strong>Os nomes dos botões mudam um pouco de um celular para outro.</strong> Se não achar,
+            procure “eSIM” na lupa de busca das Configurações/Ajustes. E <b>não apague o eSIM sem querer</b>:
+            depois de instalado, ele não pode ser instalado de novo com o mesmo QR Code.
+          </div>
+        </div>
+
+        <a class="next" href="#custos">Próximo passo: <b>Quanto vamos gastar</b> →</a>
+      </div>
+    </section>
+
+    <!-- ============ 4. CUSTOS ============ -->
+    <section id="custos" class="section section--tint" style="--accent: var(--c-cost); --accent-soft: var(--c-cost-soft)" data-icon="💶" data-label="Custos">
+      <div class="wrap">
+        <header class="section__head">
+          <span class="step">Passo 4</span>
+          <h2><span class="section__icon" aria-hidden="true">💶</span> Quanto vamos gastar</h2>
+          <p class="lead">Valores aproximados para planejar. Os números mudam sozinhos quando você muda a quantidade de pessoas e de dias.</p>
+        </header>
+
+        <div class="rates" id="rates" aria-live="polite">
+          <span>💱 Cotação de hoje:</span>
+          <b>€1 = <span data-rate="eur">R$ 5,57</span></b>
+          <b>£1 = <span data-rate="gbp">R$ 6,58</span></b>
+          <small id="rates-status">valores de referência</small>
+        </div>
+
+        <h3 class="h3">✈️ Passagens de avião</h3>
+        <div class="people">
+          <span id="people-label">Quantas pessoas vão?</span>
+          <div class="stepper" data-stepper>
+            <button type="button" data-step="-1" aria-label="Menos uma pessoa">−</button>
+            <input type="number" id="people" value="3" min="1" max="10" inputmode="numeric" aria-labelledby="people-label">
+            <button type="button" data-step="1" aria-label="Mais uma pessoa">+</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="table table--flights" id="flights" data-stack>
+            <thead>
+              <tr>
+                <th scope="col">Trecho</th>
+                <th scope="col">Companhias</th>
+                <th scope="col">Duração</th>
+                <th scope="col" class="num">Por pessoa</th>
+                <th scope="col" class="num">Para o grupo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-min="2500" data-max="4000">
+                <th scope="row">🇧🇷 → 🇪🇸<br>São Paulo → Barcelona</th>
+                <td>TAP (via Lisboa), Iberia ou Air Europa (via Madri)</td>
+                <td>13 a 17 h, com 1 conexão</td>
+                <td class="num">R$ 2.500 a 4.000</td>
+                <td class="num" data-group>—</td>
+              </tr>
+              <tr data-min="250" data-max="700">
+                <th scope="row">🇪🇸 → 🇬🇧<br>Barcelona → Londres</th>
+                <td>Vueling, easyJet, Ryanair ou British Airways</td>
+                <td>cerca de 2 h, direto</td>
+                <td class="num">R$ 250 a 700</td>
+                <td class="num" data-group>—</td>
+              </tr>
+              <tr data-min="2800" data-max="4500">
+                <th scope="row">🇬🇧 → 🇧🇷<br>Londres → São Paulo</th>
+                <td>British Airways ou LATAM (diretos), TAP (via Lisboa)</td>
+                <td>cerca de 12 h, direto</td>
+                <td class="num">R$ 2.800 a 4.500</td>
+                <td class="num" data-group>—</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row" colspan="3">Total das passagens</th>
+                <td class="num">R$ 5.550 a 9.200</td>
+                <td class="num" id="flights-total">—</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <p class="note">Classe econômica, valores médios pesquisados em outubro de 2026. Saindo de outra cidade, o preço muda.</p>
+
+        <div class="callout">
+          <span class="callout__icon" aria-hidden="true">💡</span>
+          <div>
+            <strong>Para pagar menos:</strong> Compre uma passagem <b>“multidestinos”</b> (ida para Barcelona e volta saindo de
+            Londres) — costuma sair mais barato que duas separadas. Compre com 4 a 6 meses de antecedência e evite julho e
+            dezembro. Nas companhias baratas (Ryanair, easyJet, Vueling) a <b>mala é paga à parte</b>.
+            <a href="https://www.google.com/travel/flights?hl=pt-BR" target="_blank" rel="noopener">Pesquisar no Google Voos ↗</a>
+          </div>
+        </div>
+
+        <h3 class="h3">🍽️ Gastos do dia a dia: €40 por pessoa</h3>
+        <p>Os €40 são para <b>comida, transporte e pequenos gastos</b>. Hotel e ingressos dos passeios ficam fora dessa conta.</p>
+
+        <div class="grid-2">
+          <article class="budget" style="--accent: var(--c-bcn)">
+            <header class="budget__head">
+              <h4>🇪🇸 Um dia em Barcelona</h4>
+              <p class="budget__total">€40 <small data-eur-day>≈ R$ 232</small></p>
+            </header>
+            <div class="bar" aria-hidden="true">
+              <i style="--w:10%; --c:var(--d1)"></i><i style="--w:35%; --c:var(--d2)"></i><i style="--w:10%; --c:var(--d3)"></i><i style="--w:25%; --c:var(--d4)"></i><i style="--w:12.5%; --c:var(--d5)"></i><i style="--w:7.5%; --c:var(--d6)"></i>
+            </div>
+            <ul class="budget__list">
+              <li style="--c:var(--d1)"><span>☕ Café da manhã <small>café com leite e croissant</small></span><b>€4</b></li>
+              <li style="--c:var(--d2)"><span>🍽️ Almoço <small>“menú del día”: entrada, prato, sobremesa e bebida</small></span><b>€14</b></li>
+              <li style="--c:var(--d3)"><span>🍦 Lanche e água <small>sorvete, fruta, garrafinha</small></span><b>€4</b></li>
+              <li style="--c:var(--d4)"><span>🥘 Jantar <small>tapas simples ou mercado</small></span><b>€10</b></li>
+              <li style="--c:var(--d5)"><span>🚇 Metrô e ônibus <small>cartão T-casual, 10 viagens ≈ €12,55</small></span><b>€5</b></li>
+              <li style="--c:var(--d6)"><span>🎁 Reserva <small>banheiro, lembrancinha</small></span><b>€3</b></li>
+            </ul>
+          </article>
+
+          <article class="budget" style="--accent: var(--c-ldn)">
+            <header class="budget__head">
+              <h4>🇬🇧 Um dia em Londres</h4>
+              <p class="budget__total">€40 <small data-gbp-day>≈ £34</small></p>
+            </header>
+            <div class="bar" aria-hidden="true">
+              <i style="--w:15%; --c:var(--d1)"></i><i style="--w:15%; --c:var(--d2)"></i><i style="--w:6%; --c:var(--d3)"></i><i style="--w:38%; --c:var(--d4)"></i><i style="--w:26%; --c:var(--d5)"></i>
+            </div>
+            <ul class="budget__list">
+              <li style="--c:var(--d1)"><span>☕ Café da manhã <small>café e muffin numa cafeteria</small></span><b>£5</b></li>
+              <li style="--c:var(--d2)"><span>🥪 Almoço <small>“meal deal” do mercado: sanduíche + bebida + lanche</small></span><b>£5</b></li>
+              <li style="--c:var(--d3)"><span>🍫 Lanche e água</span><b>£2</b></li>
+              <li style="--c:var(--d4)"><span>🍟 Jantar <small>fish &amp; chips ou prato de pub</small></span><b>£13</b></li>
+              <li style="--c:var(--d5)"><span>🚇 Metrô e ônibus <small>limite diário por aproximação</small></span><b>£9</b></li>
+            </ul>
+            <p class="note">Londres é mais cara: os €40 viram uns £34. Dá, mas é apertado — o “meal deal” e os museus grátis ajudam muito.</p>
+          </article>
+        </div>
+
+        <div class="calc" id="calc">
+          <h3 class="calc__title">🧮 Calculadora da viagem</h3>
+          <div class="calc__inputs">
+            <div class="field">
+              <span id="lbl-bcn">Dias em Barcelona</span>
+              <div class="stepper" data-stepper>
+                <button type="button" data-step="-1" aria-label="Menos um dia em Barcelona">−</button>
+                <input type="number" id="days-bcn" value="7" min="0" max="60" inputmode="numeric" aria-labelledby="lbl-bcn">
+                <button type="button" data-step="1" aria-label="Mais um dia em Barcelona">+</button>
+              </div>
+            </div>
+            <div class="field">
+              <span id="lbl-ldn">Dias em Londres</span>
+              <div class="stepper" data-stepper>
+                <button type="button" data-step="-1" aria-label="Menos um dia em Londres">−</button>
+                <input type="number" id="days-ldn" value="5" min="0" max="60" inputmode="numeric" aria-labelledby="lbl-ldn">
+                <button type="button" data-step="1" aria-label="Mais um dia em Londres">+</button>
+              </div>
+            </div>
+            <div class="field">
+              <span id="lbl-daily">Euros por dia (cada um)</span>
+              <div class="stepper" data-stepper data-step-size="5">
+                <button type="button" data-step="-1" aria-label="Menos 5 euros por dia">−</button>
+                <input type="number" id="daily" value="40" min="10" max="300" step="5" inputmode="numeric" aria-labelledby="lbl-daily">
+                <button type="button" data-step="1" aria-label="Mais 5 euros por dia">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc__results" aria-live="polite">
+            <div class="result">
+              <span>Gastos do dia a dia, por pessoa</span>
+              <b id="r-daily-eur">€480</b>
+              <small id="r-daily-brl">≈ R$ 2.780</small>
+            </div>
+            <div class="result">
+              <span>Gastos do dia a dia, <em id="r-people-txt">3 pessoas</em></span>
+              <b id="r-group-eur">€1.440</b>
+              <small id="r-group-brl">≈ R$ 8.340</small>
+            </div>
+            <div class="result result--big">
+              <span>Viagem completa, por pessoa*</span>
+              <b id="r-total-pp">R$ 8.700 a 12.400</b>
+              <small id="r-total-group">Grupo: R$ 26.100 a 37.200</small>
+            </div>
+          </div>
+          <p class="note">* Soma passagens + gastos do dia a dia + passaporte + ETA. <b>Não inclui hotel, seguro viagem nem ingressos.</b> Os reais já contam o IOF e a taxa do Wise (cerca de 4%).</p>
+        </div>
+
+        <a class="next" href="#compras">Próximo passo: <b>Compras baratas</b> →</a>
+      </div>
+    </section>
+
+    <!-- ============ 5. COMPRAS ============ -->
+    <section id="compras" class="section" style="--accent: var(--c-shop); --accent-soft: var(--c-shop-soft)" data-icon="🛍️" data-label="Compras">
+      <div class="wrap">
+        <header class="section__head">
+          <span class="step">Passo 5</span>
+          <h2><span class="section__icon" aria-hidden="true">🛍️</span> Compras baratas em Barcelona</h2>
+          <p class="lead">Lojas com preço bom para roupa, casaco, pijama e lembrancinhas — e brechós com peças únicas.</p>
+        </header>
+
+        <div class="cards">
+          <article class="place">
+            <img class="place__img" src="assets/img/shop-primark.jpg" alt="Fachada da Primark na Plaça de Catalunya, num prédio antigo de pedra" loading="lazy" width="800" height="600">
+            <div class="place__body">
+              <p class="place__tag">Loja de departamento</p>
+              <h3>Primark</h3>
+              <p>A queridinha dos viajantes: roupas, sapatos, pijamas, malas e souvenirs a preços muito baixos. Esta loja fica num prédio histórico, com vários andares.</p>
+              <p class="place__addr">📍 Plaça de Catalunya, 23 (esquina com La Rambla)</p>
+              <ul class="chips"><li>💶 Camiseta a partir de ~€4</li></ul>
+              <a class="btn btn--map" href="https://www.google.com/maps/search/?api=1&amp;query=Primark+Pla%C3%A7a+de+Catalunya+23+Barcelona" target="_blank" rel="noopener">Ver no mapa ↗</a>
+            </div>
+          </article>
+
+          <article class="place">
+            <img style="object-position: center 40%" class="place__img" src="assets/img/shop-lefties.jpg" alt="Fachada de uma loja Lefties" loading="lazy" width="615" height="800">
+            <div class="place__body">
+              <p class="place__tag">Loja de roupas</p>
+              <h3>Lefties</h3>
+              <p>A marca barata do mesmo grupo da Zara. Roupas da moda, calçados e roupa de criança com preços bem menores.</p>
+              <p class="place__addr">📍 Várias lojas na cidade — o mapa mostra a mais perto</p>
+              <ul class="chips"><li>💶 Preço de “outlet”</li></ul>
+              <a class="btn btn--map" href="https://www.google.com/maps/search/?api=1&amp;query=Lefties+Barcelona" target="_blank" rel="noopener">Ver no mapa ↗</a>
+            </div>
+          </article>
+
+          <article class="place">
+            <img class="place__img" src="assets/img/shop-humana.jpg" alt="Fachada de uma loja Humana, com placa amarela" loading="lazy" width="800" height="602">
+            <div class="place__body">
+              <p class="place__tag">Brechó</p>
+              <h3>Humana</h3>
+              <p>Rede de brechós beneficentes: o dinheiro vai para projetos sociais. Roupas de segunda mão e vintage em ótimo estado, com várias lojas no centro.</p>
+              <p class="place__addr">📍 Lojas no Raval, Bairro Gótico e Gràcia</p>
+              <ul class="chips"><li>♻️ Peças desde ~€3</li></ul>
+              <a class="btn btn--map" href="https://www.google.com/maps/search/?api=1&amp;query=Humana+Second+Hand+Barcelona" target="_blank" rel="noopener">Ver no mapa ↗</a>
+            </div>
+          </article>
+
+          <article class="place">
+            <img class="place__img" src="assets/img/shop-flamingos.jpg" alt="Interior de um brechó com araras cheias de roupas" loading="lazy" width="800" height="600">
+            <div class="place__body">
+              <p class="place__tag">Brechó por quilo</p>
+              <h3>Flamingos Vintage Kilo</h3>
+              <p>Brechó grande onde boa parte das roupas é vendida <b>por peso</b>: você enche a cestinha e paga pelo quilo. Divertido de garimpar.</p>
+              <p class="place__addr">📍 Carrer de Tallers, 31 — Raval</p>
+              <ul class="chips"><li>⚖️ Paga por quilo</li></ul>
+              <a class="btn btn--map" href="https://www.google.com/maps/search/?api=1&amp;query=Flamingos+Vintage+Kilo+Barcelona" target="_blank" rel="noopener">Ver no mapa ↗</a>
+            </div>
+          </article>
+
+          <article class="place">
+            <img class="place__img" src="assets/img/shop-encants.jpg" alt="Mercado dos Encants, com teto espelhado sobre as barracas" loading="lazy" width="800" height="406">
+            <div class="place__body">
+              <p class="place__tag">Feira de usados</p>
+              <h3>Mercat dels Encants</h3>
+              <p>Um dos mercados de pulgas mais antigos da Europa, debaixo de um teto espelhado. Roupas, antiguidades, louças e tudo o que se imaginar.</p>
+              <p class="place__addr">📍 Carrer dels Castillejos, 158 — perto da Plaça de les Glòries</p>
+              <ul class="chips"><li>🗓️ Seg, qua, sex e sáb</li></ul>
+              <a class="btn btn--map" href="https://www.google.com/maps/search/?api=1&amp;query=Mercat+dels+Encants+Barcelona" target="_blank" rel="noopener">Ver no mapa ↗</a>
+            </div>
+          </article>
+
+          <aside class="place place--tip">
+            <div class="place__body">
+              <p class="place__tag">Dica para economizar</p>
+              <h3>🛒 Supermercados</h3>
+              <p>Água, frutas, lanches e até refeições prontas saem muito mais baratos em <b>Mercadona</b>, <b>Lidl</b>, <b>Dia</b> e <b>Condis</b>. Ótimo para o café da manhã e para levar na bolsa.</p>
+              <a class="btn btn--map" href="https://www.google.com/maps/search/?api=1&amp;query=Mercadona+Barcelona" target="_blank" rel="noopener">Mercadona mais perto ↗</a>
+            </div>
+          </aside>
+        </div>
+        <p class="note">Fotos da Humana e do brechó por quilo são ilustrativas (de outras unidades).</p>
+
+        <a class="next" href="#barcelona">Próximo passo: <b>Passeios em Barcelona</b> →</a>
+      </div>
+    </section>
+
+    <!-- ============ 6. BARCELONA ============ -->
+    <section id="barcelona" class="section section--bcn" style="--accent: var(--c-bcn); --accent-soft: var(--c-bcn-soft)" data-icon="⛪" data-label="Barcelona">
+      <div class="wrap">
+        <header class="section__head">
+          <span class="step">Passo 6</span>
+          <h2><span class="section__icon" aria-hidden="true">⛪</span> Passeios em Barcelona</h2>
+          <p class="lead">Arte de Gaudí, ruas medievais, museus e praia — tudo pertinho, dá para fazer muita coisa a pé e de metrô.</p>
+        </header>
+
+        <div class="cards">
+          <article class="place">
+            <img style="object-position: center 30%" class="place__img" src="assets/img/bcn-sagrada.jpg" alt="Torres da Basílica da Sagrada Família" loading="lazy" width="549" height="800">
+            <div class="place__body">
+              <p class="place__tag">Imperdível</p>
+              <h3>Sagrada Família</h3>
+              <p>A basílica mais famosa de Gaudí, em construção desde 1882. Por dentro, os vitrais deixam tudo colorido. Compre o ingresso online, com dias de antecedência.</p>
+              <p class="place__addr">📍 Carrer de Mallorca, 401 · Metrô Sagrada Família</p>
+              <ul class="chips"><li>🎟️ a partir de ~€26</li></ul>
+              <a class="btn btn--map" href="https://www.google.com/maps/search/?api=1&amp;query=Sagrada+Fam%C3%ADlia+Barcelona" target="_blank" rel="noopener">Ver no mapa ↗</a>
+            </div>
+          </article>
+
+          <article class="place">
+            <img style="object-position: center 35%" class="place__img" src="assets/img/bcn-catedral.jpg" alt="Fachada gótica da Catedral de Barcelona" loading="lazy" width="533" height="800">
+            <div class="place__body">
+              <p class="place__tag">Igreja histórica</p>
+              <h3>Catedral de Barcelona</h3>
+              <p>Catedral gótica de Santa Eulália, no coração do Bairro Gótico. No claustro vivem <b>13 gansos brancos</b> — uma tradição de séculos. Dá para subir ao terraço.</p>
+              <p class="place__addr">📍 Pla de la Seu, s/n · Metrô Jaume I</p>
+              <ul class="chips"><li>🎟️ visita ~€15</li><li>⛪ missas grátis</li></ul>
+              <a class="btn btn--map" href="https://www.google.com/maps/search/?api=1&amp;query=Catedral+de+Barcelona" target="_blank" rel="noopener">Ver no mapa ↗</a>
+            </div>
+          </article>
+
+          <article class="place">
+            <img class="place__img" src="assets/img/bcn-gotico.jpg" alt="Ponte em estilo gótico sobre a estreita Carrer del Bisbe" loading="lazy" width="580" height="800">
+            <div class="place__body">
+              <p class="place__tag">Passeio a pé</p>
+              <h3>Bairro Gótico</h3>
+              <p>Ruelas de pedra da Idade Média, pracinhas escondidas e a famosa pontezinha da Carrer del Bisbe. Perfeito para caminhar sem pressa e sem gastar nada.</p>
+              <p class="place__addr">📍 Comece pela Carrer del Bisbe, ao lado da Catedral</p>
+              <ul class="chips"><li>✅ Grátis</li></ul>
+              <a class="btn btn--map" href="https://www.google.com/maps/search/?api=1&amp;query=Carrer+del+Bisbe+Barcelona" target="_blank" rel="noopener">Ver no mapa ↗</a>
+            </div>
+          </article>
+
+          <article class="place">
+            <img class="place__img" src="assets/img/bcn-picasso.jpg" alt="Pátio interno de pedra do Museu Picasso, com escadaria e palmeira" loading="lazy" width="590" height="800">
+            <div class="place__body">
+              <p class="place__tag">Museu</p>
+              <h3>Museu Picasso</h3>
+              <p>Obras da juventude de Picasso, em palácios medievais lindos. Tem horários gratuitos em alguns dias — reserve pelo site.</p>
+              <p class="place__addr">📍 Carrer de Montcada, 15-23 · Metrô Jaume I</p>
+              <ul class="chips"><li>🎟️ ~€15</li><li>🆓 horários grátis</li></ul>
+              <a class="btn btn--map" href="https://www.google.com/maps/search/?api=1&amp;query=Museu+Picasso+Barcelona" target="_blank" rel="noopener">Ver no mapa ↗</a>
+            </div>
+          </article>
+
+          <article class="place">
+            <img style="object-position: center 40%" class="place__img" src="assets/img/bcn-mnac.jpg" alt="Palácio Nacional de Montjuïc, sede do MNAC, visto de baixo das escadarias" loading="lazy" width="600" height="800">
+            <div class="place__body">
+              <p class="place__tag">Museu + vista</p>
+              <h3>MNAC — Museu Nacional de Arte da Catalunha</h3>
+              <p>Um palácio no alto de Montjuïc com arte de mil anos e uma das vistas mais bonitas da cidade. Lá embaixo fica a Fonte Mágica, com show de luz e água.</p>
+              <p class="place__addr">📍 Palau Nacional, Parc de Montjuïc · Metrô Espanya</p>
+              <ul class="chips"><li>🎟️ ~€12</li><li>🆓 sábado à tarde</li></ul>
+              <a class="btn btn--map" href="https://www.google.com/maps/search/?api=1&amp;query=MNAC+Museu+Nacional+d%27Art+de+Catalunya" target="_blank" rel="noopener">Ver no mapa ↗</a>
+            </div>
+          </article>
+
+          <article class="place">
+            <img class="place__img" src="assets/img/bcn-barceloneta.jpg" alt="Calçadão com palmeiras ao lado da praia da Barceloneta" loading="lazy" width="800" height="531">
+            <div class="place__body">
+              <p class="place__tag">Praia</p>
+              <h3>Barceloneta</h3>
+              <p>A praia da cidade, com calçadão de palmeiras, restaurantes de frutos do mar e paella. Ótimo para o fim de tarde.</p>
+              <p class="place__addr">📍 Platja de la Barceloneta · Metrô Barceloneta</p>
+              <ul class="chips"><li>✅ Grátis</li><li>🥘 Prove a paella</li></ul>
+              <a class="btn btn--map" href="https://www.google.com/maps/search/?api=1&amp;query=Platja+de+la+Barceloneta+Barcelona" target="_blank" rel="noopener">Ver no mapa ↗</a>
+            </div>
+          </article>
+
+          <article class="place">
+            <img class="place__img" src="assets/img/bcn-parkguell.jpg" alt="Casinhas de Gaudí com mosaicos coloridos no Park Güell" loading="lazy" width="800" height="600">
+            <div class="place__body">
+              <p class="place__tag">Bônus</p>
+              <h3>Park Güell</h3>
+              <p>O parque de Gaudí com mosaicos coloridos, o famoso lagarto e casinhas de conto de fadas. O ingresso tem horário marcado — tem subida, vá de tênis.</p>
+              <p class="place__addr">📍 Carrer d'Olot, s/n — Gràcia</p>
+              <ul class="chips"><li>🎟️ ~€18</li></ul>
+              <a class="btn btn--map" href="https://www.google.com/maps/search/?api=1&amp;query=Park+G%C3%BCell+Barcelona" target="_blank" rel="noopener">Ver no mapa ↗</a>
+            </div>
+          </article>
+
+          <aside class="place place--tip place--warn">
+            <div class="place__body">
+              <p class="place__tag">Atenção</p>
+              <h3>👜 Cuidado com batedores de carteira</h3>
+              <p>Barcelona é segura, mas tem muito furto no metrô, na La Rambla e na praia.</p>
+              <ul class="checks">
+                <li>Bolsa fechada e na frente do corpo</li>
+                <li>Celular guardado quando não estiver usando</li>
+                <li>Nada no bolso de trás</li>
+              </ul>
+            </div>
+          </aside>
+
+          <aside class="place place--tip">
+            <div class="place__body">
+              <p class="place__tag">Dica de transporte</p>
+              <h3>🚇 Metrô fácil</h3>
+              <p>Compre o cartão <b>T-casual</b> (10 viagens de metrô e ônibus) na máquina da estação — a tela tem opção em português.</p>
+              <p><b>Cada pessoa precisa do seu cartão.</b></p>
+            </div>
+          </aside>
+        </div>
+
+        <a class="next" href="#londres">Próximo passo: <b>Passeios em Londres</b> →</a>
+      </div>
+    </section>
+
+    <!-- ============ 7. LONDRES ============ -->
+    <section id="londres" class="section section--ldn" style="--accent: var(--c-ldn); --accent-soft: var(--c-ldn-soft)" data-icon="🎡" data-label="Londres">
+      <div class="wrap">
+        <header class="section__head">
+          <span class="step">Passo 7</span>
+          <h2><span class="section__icon" aria-hidden="true">🎡</span> Passeios em Londres</h2>
+          <p class="lead">Relógios, castelos, a família real e os Beatles. Muitos museus de Londres são de graça!</p>
+        </header>
+
+        <div class="cards">
+          <article class="place">
+            <img style="object-position: center 18%" class="place__img" src="assets/img/ldn-bigben.jpg" alt="Torre do Big Ben e o Parlamento à beira do rio Tâmisa" loading="lazy" width="450" height="800">
+            <div class="place__body">
+              <p class="place__tag">Cartão-postal</p>
+              <h3>Big Ben</h3>
+              <p>O relógio mais famoso do mundo, ao lado do Parlamento, na beira do rio Tâmisa. A melhor foto é da ponte de Westminster.</p>
+              <p class="place__addr">📍 Westminster, London SW1A 0AA · Metrô Westminster</p>
+              <ul class="chips"><li>✅ Grátis (por fora)</li></ul>
+              <a class="btn btn--map" href="https://www.google.com/maps/search/?api=1&amp;query=Big+Ben+London" target="_blank" rel="noopener">Ver no mapa ↗</a>
+            </div>
+          </article>
+
+          <article class="place">
+            <img class="place__img" src="assets/img/ldn-eye.jpg" alt="Roda-gigante London Eye à beira do rio" loading="lazy" width="800" height="533">
+            <div class="place__body">
+              <p class="place__tag">Vista de cima</p>
+              <h3>London Eye</h3>
+              <p>Roda-gigante de 135 metros com cabines de vidro fechadas. A volta leva uns 30 minutos, bem devagar e tranquila — dá para ver a cidade toda.</p>
+              <p class="place__addr">📍 Riverside Building, County Hall, SE1 7PB · Metrô Waterloo</p>
+              <ul class="chips"><li>🎟️ a partir de ~£30</li></ul>
+              <a class="btn btn--map" href="https://www.google.com/maps/search/?api=1&amp;query=London+Eye" target="_blank" rel="noopener">Ver no mapa ↗</a>
+            </div>
+          </article>
+
+          <article class="place">
+            <img class="place__img" src="assets/img/ldn-tower.jpg" alt="Torre de Londres vista do alto, com suas muralhas" loading="lazy" width="800" height="519">
+            <div class="place__body">
+              <p class="place__tag">Castelo</p>
+              <h3>Torre de Londres</h3>
+              <p>Um castelo de quase mil anos, com muralhas, guardas de uniforme e as <b>Joias da Coroa</b> da família real. Fica ao lado da Tower Bridge.</p>
+              <p class="place__addr">📍 London EC3N 4AB · Metrô Tower Hill</p>
+              <ul class="chips"><li>🎟️ ~£35</li></ul>
+              <a class="btn btn--map" href="https://www.google.com/maps/search/?api=1&amp;query=Tower+of+London" target="_blank" rel="noopener">Ver no mapa ↗</a>
+            </div>
+          </article>
+
+          <article class="place">
+            <img class="place__img" src="assets/img/ldn-windsor.jpg" alt="Castelo de Windsor ao pôr do sol" loading="lazy" width="800" height="533">
+            <div class="place__body">
+              <p class="place__tag">Castelo · bate e volta</p>
+              <h3>Castelo de Windsor</h3>
+              <p>Uma das casas do rei, o castelo habitado mais antigo do mundo. Fica fora de Londres: cerca de 1 hora de trem, saindo das estações Paddington ou Waterloo.</p>
+              <p class="place__addr">📍 Windsor SL4 1NJ</p>
+              <ul class="chips"><li>🎟️ ~£32 + trem</li></ul>
+              <a class="btn btn--map" href="https://www.google.com/maps/search/?api=1&amp;query=Windsor+Castle" target="_blank" rel="noopener">Ver no mapa ↗</a>
+            </div>
+          </article>
+
+          <article class="place">
+            <img class="place__img" src="assets/img/ldn-abbey.jpg" alt="Faixa de pedestres da Abbey Road" loading="lazy" width="800" height="533">
+            <div class="place__body">
+              <p class="place__tag">Beatles</p>
+              <h3>Abbey Road</h3>
+              <p>A faixa de pedestres da capa do disco dos Beatles, em frente ao estúdio onde eles gravaram. <b>Atenção:</b> é uma rua de verdade, com carros passando — foto com calma!</p>
+              <p class="place__addr">📍 3 Abbey Road, NW8 9AY · Metrô St John's Wood</p>
+              <ul class="chips"><li>✅ Grátis</li></ul>
+              <a class="btn btn--map" href="https://www.google.com/maps/search/?api=1&amp;query=Abbey+Road+Studios+London" target="_blank" rel="noopener">Ver no mapa ↗</a>
+            </div>
+          </article>
+
+          <article class="place">
+            <img class="place__img" src="assets/img/ldn-buckingham.jpg" alt="Fachada do Palácio de Buckingham pela manhã" loading="lazy" width="800" height="479">
+            <div class="place__body">
+              <p class="place__tag">Família real</p>
+              <h3>Palácio de Buckingham</h3>
+              <p>A casa oficial do rei. Veja a <b>Troca da Guarda</b>, com banda e soldados de chapéu alto — os dias e horários estão no site oficial. Chegue cedo para pegar lugar.</p>
+              <p class="place__addr">📍 London SW1A 1AA · Metrô Green Park</p>
+              <ul class="chips"><li>✅ Troca da Guarda grátis</li></ul>
+              <a class="btn btn--map" href="https://www.google.com/maps/search/?api=1&amp;query=Buckingham+Palace" target="_blank" rel="noopener">Ver no mapa ↗</a>
+            </div>
+          </article>
+
+          <article class="place">
+            <img class="place__img" src="assets/img/ldn-towerbridge.jpg" alt="Tower Bridge iluminada ao amanhecer" loading="lazy" width="800" height="533">
+            <div class="place__body">
+              <p class="place__tag">Bônus</p>
+              <h3>Tower Bridge</h3>
+              <p>A ponte com duas torres, ao lado da Torre de Londres. Atravessar a pé é grátis; lá em cima tem um piso de vidro para quem tem coragem.</p>
+              <p class="place__addr">📍 Tower Bridge Rd, SE1 2UP · Metrô Tower Hill</p>
+              <ul class="chips"><li>✅ Grátis a pé</li></ul>
+              <a class="btn btn--map" href="https://www.google.com/maps/search/?api=1&amp;query=Tower+Bridge+London" target="_blank" rel="noopener">Ver no mapa ↗</a>
+            </div>
+          </article>
+
+          <aside class="place place--tip place--warn">
+            <div class="place__body">
+              <p class="place__tag">Muito importante</p>
+              <h3>👀 Olhe para a DIREITA ao atravessar</h3>
+              <p>Na Inglaterra os carros andam <b>do lado esquerdo</b> — ao contrário do Brasil. Antes de atravessar, olhe primeiro para a direita.</p>
+              <p>No chão das faixas de pedestre está escrito <b>“LOOK RIGHT”</b> para lembrar.</p>
+            </div>
+          </aside>
+
+          <aside class="place place--tip">
+            <div class="place__body">
+              <p class="place__tag">Dica de transporte</p>
+              <h3>🚇 Metrô sem bilhete</h3>
+              <p>É só <b>encostar o cartão Wise</b> (ou o celular) na catraca do metrô ou do ônibus. Não precisa comprar bilhete.</p>
+              <p>Cada pessoa usa um cartão diferente. Existe um limite por dia: passou dele, o resto do dia é grátis.</p>
+            </div>
+          </aside>
+        </div>
+
+        <div class="callout">
+          <span class="callout__icon" aria-hidden="true">🖼️</span>
+          <div><strong>Museus de graça em Londres</strong> British Museum, National Gallery, Museu de História Natural e Tate Modern não cobram entrada — ótimo para dias de chuva e para economizar.</div>
+        </div>
+
+        <a class="next" href="#checklist">Próximo passo: <b>Checklist</b> →</a>
+      </div>
+    </section>
+
+    <!-- ============ 8. CHECKLIST ============ -->
+    <section id="checklist" class="section section--tint" style="--accent: var(--c-check); --accent-soft: var(--c-check-soft)" data-icon="✅" data-label="Checklist">
+      <div class="wrap">
+        <header class="section__head">
+          <span class="step">Passo 8</span>
+          <h2><span class="section__icon" aria-hidden="true">✅</span> Checklist antes de viajar</h2>
+          <p class="lead">Marque o que já está pronto. O site lembra o que você marcou neste aparelho.</p>
+        </header>
+
+        <div class="checklist">
+          <div class="progress" aria-live="polite">
+            <div class="progress__bar"><span id="progress-fill"></span></div>
+            <p id="progress-text">0 de 0 prontos</p>
+          </div>
+          <ul class="todo" id="todo">
+            <li><label><input type="checkbox" value="passaporte"><span>🛂 Passaporte válido (de todos)</span></label></li>
+            <li><label><input type="checkbox" value="eta"><span>🇬🇧 ETA do Reino Unido aprovada</span></label></li>
+            <li><label><input type="checkbox" value="etias"><span>🇪🇺 Conferir se o ETIAS já começou</span></label></li>
+            <li><label><input type="checkbox" value="seguro"><span>🩺 Seguro viagem contratado e impresso</span></label></li>
+            <li><label><input type="checkbox" value="voos"><span>✈️ Passagens compradas</span></label></li>
+            <li><label><input type="checkbox" value="hotel-bcn"><span>🏨 Hospedagem em Barcelona reservada</span></label></li>
+            <li><label><input type="checkbox" value="hotel-ldn"><span>🏨 Hospedagem em Londres reservada</span></label></li>
+            <li><label><input type="checkbox" value="wise"><span>💳 Conta Wise criada e cartão ativado</span></label></li>
+            <li><label><input type="checkbox" value="dinheiro"><span>💶 Dinheiro colocado em euro e libra</span></label></li>
+            <li><label><input type="checkbox" value="esim"><span>📶 eSIM da Nomad instalado (ainda no Brasil)</span></label></li>
+            <li><label><input type="checkbox" value="ingressos"><span>🎟️ Ingressos da Sagrada Família comprados</span></label></li>
+            <li><label><input type="checkbox" value="adaptador"><span>🔌 Adaptadores de tomada: Espanha (2 pinos redondos) e Inglaterra (3 pinos retangulares)</span></label></li>
+            <li><label><input type="checkbox" value="remedios"><span>💊 Remédios de uso contínuo, com a receita</span></label></li>
+            <li><label><input type="checkbox" value="copias"><span>📸 Foto dos documentos no celular e cópia em papel</span></label></li>
+            <li><label><input type="checkbox" value="cartao"><span>🏦 Avisar o banco e liberar o cartão de crédito para uso no exterior</span></label></li>
+            <li><label><input type="checkbox" value="roupa"><span>🧥 Casaco e guarda-chuva (Londres chove muito!)</span></label></li>
+          </ul>
+          <div class="checklist__actions">
+            <button type="button" class="btn btn--accent" id="print-btn">🖨️ Imprimir checklist</button>
+            <button type="button" class="btn btn--ghost" id="reset-btn">Desmarcar tudo</button>
+          </div>
+        </div>
+
+        <a class="next" href="#frases">Próximo passo: <b>Frases e emergência</b> →</a>
+      </div>
+    </section>
+
+    <!-- ============ 9. FRASES ============ -->
+    <section id="frases" class="section" style="--accent: var(--c-talk); --accent-soft: var(--c-talk-soft)" data-icon="🗣️" data-label="Frases">
+      <div class="wrap">
+        <header class="section__head">
+          <span class="step">Passo 9</span>
+          <h2><span class="section__icon" aria-hidden="true">🗣️</span> Frases úteis e emergência</h2>
+          <p class="lead">Toque em 🔊 para ouvir como se fala. Em Barcelona também se fala catalão, mas todo mundo entende espanhol.</p>
+        </header>
+
+        <div class="table-wrap">
+          <table class="table phrases" data-stack>
+            <thead>
+              <tr><th scope="col">Português</th><th scope="col">🇪🇸 Espanhol (Barcelona)</th><th scope="col">🇬🇧 Inglês (Londres)</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Bom dia!</th><td><button type="button" class="say" data-lang="es-ES">¡Buenos días!</button><small>buê-nos dí-as</small></td><td><button type="button" class="say" data-lang="en-GB">Good morning!</button><small>gud mór-nin</small></td></tr>
+              <tr><th scope="row">Obrigado(a)</th><td><button type="button" class="say" data-lang="es-ES">Gracias</button><small>grá-ci-as</small></td><td><button type="button" class="say" data-lang="en-GB">Thank you</button><small>thénk iú</small></td></tr>
+              <tr><th scope="row">Quanto custa?</th><td><button type="button" class="say" data-lang="es-ES">¿Cuánto cuesta?</button><small>cuán-to cuês-ta</small></td><td><button type="button" class="say" data-lang="en-GB">How much is it?</button><small>ráu mâtch is it</small></td></tr>
+              <tr><th scope="row">Onde fica o banheiro?</th><td><button type="button" class="say" data-lang="es-ES">¿Dónde está el baño?</button><small>dôn-de es-tá el bâ-nho</small></td><td><button type="button" class="say" data-lang="en-GB">Where is the toilet?</button><small>uér is dâ tói-let</small></td></tr>
+              <tr><th scope="row">A conta, por favor</th><td><button type="button" class="say" data-lang="es-ES">La cuenta, por favor</button><small>la cuên-ta, por fa-vór</small></td><td><button type="button" class="say" data-lang="en-GB">The bill, please</button><small>dâ bil, plíz</small></td></tr>
+              <tr><th scope="row">Não falo espanhol / inglês</th><td><button type="button" class="say" data-lang="es-ES">No hablo español</button><small>no á-blo es-pa-nhól</small></td><td><button type="button" class="say" data-lang="en-GB">I don't speak English</button><small>ai dônt spík ín-glish</small></td></tr>
+              <tr><th scope="row">Pode me ajudar?</th><td><button type="button" class="say" data-lang="es-ES">¿Me puede ayudar?</button><small>me puê-de a-iu-dár</small></td><td><button type="button" class="say" data-lang="en-GB">Can you help me?</button><small>quén iú rélp mi</small></td></tr>
+              <tr><th scope="row">Socorro!</th><td><button type="button" class="say" data-lang="es-ES">¡Ayuda!</button><small>a-iú-da</small></td><td><button type="button" class="say" data-lang="en-GB">Help!</button><small>rélp</small></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sos">
+          <div class="sos__item">
+            <span class="sos__num">112</span>
+            <p><b>Emergência na Espanha</b> (e em toda a Europa): polícia, ambulância e bombeiros. Atendem em inglês.</p>
+          </div>
+          <div class="sos__item">
+            <span class="sos__num">999</span>
+            <p><b>Emergência no Reino Unido</b>. O 112 também funciona lá.</p>
+          </div>
+          <div class="sos__item sos__item--soft">
+            <span class="sos__num">🇧🇷</span>
+            <p><b>Perdeu o passaporte?</b> Procure o Consulado do Brasil.
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Consulado+Geral+do+Brasil+em+Barcelona" target="_blank" rel="noopener">Em Barcelona ↗</a> ·
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Consulado+Geral+do+Brasil+em+Londres" target="_blank" rel="noopener">Em Londres ↗</a>
+            </p>
+          </div>
+        </div>
+
+        <a class="next next--top" href="#inicio">↑ Voltar para o início</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="footer__love">Feito com carinho para a nossa viagem ✈️ 🇪🇸 🇬🇧</p>
+      <p class="footer__small">Valores aproximados, pesquisados em outubro de 2026. Preços, taxas e regras mudam — confira sempre nos sites oficiais antes de pagar.</p>
+      <details class="credits">
+        <summary>Créditos das fotos (Wikimedia Commons)</summary>
+        <ul>
+          <li><a href="https://commons.wikimedia.org/wiki/File:SF_maig_2_cropped.jpg" target="_blank" rel="noopener">Sagrada Família</a> — Canaan, CC BY-SA 4.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Barcelona_Cathedral_Saint_Eulalia.jpg" target="_blank" rel="noopener">Catedral de Barcelona</a> — Fernando, CC BY-SA 4.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Barcelona_-_Carrer_del_Bisbe.jpg" target="_blank" rel="noopener">Carrer del Bisbe</a> — Llull, CC BY-SA 2.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Museu_Picasso_Barcelona.jpg" target="_blank" rel="noopener">Museu Picasso</a> — uayebt, CC BY 2.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Museu_nacional_d%27art_de_catalunya_2.jpg" target="_blank" rel="noopener">MNAC</a> — Jvhertum, CC BY-SA 3.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Promenade_and_beach,_Platja_de_la_Barceloneta,_Barcelona,_2015.jpg" target="_blank" rel="noopener">Barceloneta</a> — DimiTalen, CC0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Parc_guell_-_panoramio.jpg" target="_blank" rel="noopener">Park Güell</a> — essetefano, CC BY 3.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Elizabeth_Tower_and_the_north_front_of_the_Palace_of_Westminster,_London.jpg" target="_blank" rel="noopener">Big Ben</a> — Christian David, CC BY-SA 4.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:London-Eye-2009.JPG" target="_blank" rel="noopener">London Eye</a> — Khamtran, CC BY-SA 3.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Tower_of_London_from_the_Shard_(8515883950).jpg" target="_blank" rel="noopener">Torre de Londres</a> — Duncan (Nottingham, UK), CC BY 2.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Windsor_Castle_at_Sunset_-_Nov_2006.jpg" target="_blank" rel="noopener">Castelo de Windsor</a> — Diliff, CC BY 2.5</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Abbey_Road_Zebra.jpg" target="_blank" rel="noopener">Abbey Road</a> — Misterweiss, domínio público</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Buckingham_Palace_London_Morning_2020_01_(cropped).jpg" target="_blank" rel="noopener">Palácio de Buckingham</a> — Julian Herzog, CC BY 4.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Tower_Bridge_at_Dawn.jpg" target="_blank" rel="noopener">Tower Bridge</a> — Fuzzypiggy, CC BY-SA 3.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:048_Primark,_antiga_Banca_Arn%C3%BAs,_pl._Catalunya_23_-_la_Rambla_142_(Barcelona).jpg" target="_blank" rel="noopener">Primark Barcelona</a> — Enric, CC BY-SA 4.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Madrid_-_Tienda_de_Lefties_en_Gran_V%C3%ADa_32_(1)_01.jpg" target="_blank" rel="noopener">Lefties</a> — Zarateman, CC0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Humana_second_hand_shop_in_Shumen.jpg" target="_blank" rel="noopener">Humana</a> — Андрей Романенко, CC BY-SA 4.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Bielsko-Bia%C5%82a,_wn%C4%99trze_dawnego_kina_Apollo_-_ciucholand_01.jpg" target="_blank" rel="noopener">Brechó (ilustrativa)</a> — Kamil Czaiński, CC BY-SA 4.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Mercat_dels_Encants_de_Barcelona.jpg" target="_blank" rel="noopener">Mercat dels Encants</a> — Pilardenou999, CC0</li>
+        </ul>
+      </details>
+    </div>
+  </footer>
+
+  <a href="#inicio" class="to-top" id="to-top" aria-label="Voltar ao topo da página">↑<span>Topo</span></a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
