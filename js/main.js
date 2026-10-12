@@ -30,6 +30,10 @@
   const PASSPORT_FEE = 257.25;  // R$, passaporte comum (PF, 2026)
   const ETA_GBP = 20;           // £, autorização do Reino Unido
   const FEES = 1.04;            // IOF (3,5%) + taxa do Wise ≈ 4%
+  const INSURANCE = {           // R$, seguro viagem Europa 15 dias, por pessoa
+    young: [180, 375],          // até 59 anos
+    senior: [270, 560],         // 60 a 70 anos
+  };
 
   const rates = { eur: 5.57, gbp: 6.58 }; // referência de out/2026, atualizada pela internet
 
@@ -189,13 +193,14 @@
 
   /* ---------- custos: passagens + calculadora ---------- */
   const peopleInput = $('#people');
+  const seniorsInput = $('#seniors');
   const daysBcn = $('#days-bcn');
   const daysLdn = $('#days-ldn');
   const dailyInput = $('#daily');
   const flightRows = $$('#flights tbody tr');
 
   const num = (input) => Math.max(0, Number(input.value) || 0);
-  const range = (a, b) => `${fmtBRL.format(a)} a ${fmtNum.format(b)}`;
+  const range = (a, b) => (a === b ? fmtBRL.format(a) : `${fmtBRL.format(a)} a ${fmtNum.format(b)}`);
 
   const renderCosts = () => {
     const people = Math.max(1, num(peopleInput));
@@ -210,6 +215,7 @@
       fMax += max;
       $('[data-group]', row).textContent = range(min * people, max * people);
     });
+    $('#flights-total-pp').textContent = range(fMin, fMax);
     $('#flights-total').textContent = range(fMin * people, fMax * people);
 
     // gastos do dia a dia
@@ -224,15 +230,29 @@
     $('#r-group-eur').textContent = fmtEUR.format(eurPP * people);
     $('#r-group-brl').textContent = '≈ ' + fmtBRL.format(roundTo(brlPP * people, 10));
 
-    // viagem completa (sem hotel, seguro e ingressos)
+    // seguro viagem (depende de quantos têm 60 anos ou mais)
+    if (num(seniorsInput) > people) seniorsInput.value = people;
+    const seniors = num(seniorsInput);
+    const young = people - seniors;
+    const insMin = young * INSURANCE.young[0] + seniors * INSURANCE.senior[0];
+    const insMax = young * INSURANCE.young[1] + seniors * INSURANCE.senior[1];
+    $('#ins-label').textContent = `${people === 1 ? '1 pessoa' : `${people} pessoas`} (${seniors} com 60 anos ou mais)`;
+    $('#ins-group').textContent = range(insMin, insMax);
+
+    // viagem completa (sem hotel em Londres e ingressos)
     const fixedPP = brlPP + PASSPORT_FEE + ETA_GBP * rates.gbp;
-    const tMin = roundTo(fMin + fixedPP, 100);
-    const tMax = roundTo(fMax + fixedPP, 100);
-    $('#r-total-pp').textContent = range(tMin, tMax);
-    $('#r-total-group').textContent = `${people === 1 ? 'Total' : 'Grupo'}: ${range(tMin * people, tMax * people)}`;
+    const insPPMin = young > 0 ? INSURANCE.young[0] : INSURANCE.senior[0];
+    const insPPMax = seniors > 0 ? INSURANCE.senior[1] : INSURANCE.young[1];
+    $('#r-total-pp').textContent = range(
+      roundTo(fMin + fixedPP + insPPMin, 100),
+      roundTo(fMax + fixedPP + insPPMax, 100),
+    );
+    const gMin = roundTo((fMin + fixedPP) * people + insMin, 100);
+    const gMax = roundTo((fMax + fixedPP) * people + insMax, 100);
+    $('#r-total-group').textContent = `${people === 1 ? 'Total' : 'Grupo'}: ${range(gMin, gMax)}`;
   };
 
-  [peopleInput, daysBcn, daysLdn, dailyInput].forEach((el) => el.addEventListener('input', renderCosts));
+  [peopleInput, seniorsInput, daysBcn, daysLdn, dailyInput].forEach((el) => el.addEventListener('input', renderCosts));
 
   /* ---------- cotação (atualiza sozinha quando há internet) ---------- */
   const renderRates = () => {

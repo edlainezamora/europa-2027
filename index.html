@@ -95,10 +95,12 @@
 
       <div class="wrap">
         <ol class="route" aria-label="Roteiro da viagem">
-          <li><span class="route__flag">🇧🇷</span><strong>São Paulo</strong><span>Partida</span></li>
-          <li><span class="route__flag">🇪🇸</span><strong>Barcelona</strong><span>Espanha · paga em euro (€)</span></li>
-          <li><span class="route__flag">🇬🇧</span><strong>Londres</strong><span>Inglaterra · paga em libra (£)</span></li>
-          <li><span class="route__flag">🏠</span><strong>Volta pra casa</strong><span>Com muitas fotos!</span></li>
+          <li><span class="route__flag">🇧🇷</span><strong>Maringá</strong><span>Partida · voo até Guarulhos</span></li>
+          <li><span class="route__flag">🛫</span><strong>Guarulhos</strong><span>Voo para a Europa</span></li>
+          <li><span class="route__flag">🇪🇸</span><strong>Barcelona</strong><span>Em casa 🏠 · paga em euro (€)</span></li>
+          <li><span class="route__flag">🇬🇧</span><strong>Londres</strong><span>Ida e volta de avião · paga em libra (£)</span></li>
+          <li><span class="route__flag">🇪🇸</span><strong>Barcelona</strong><span>De volta pra casa</span></li>
+          <li><span class="route__flag">🏠</span><strong>Maringá</strong><span>Volta via Guarulhos, com muitas fotos!</span></li>
         </ol>
       </div>
     </section>
@@ -226,10 +228,15 @@
           <div class="card card--flat">
             <h4 class="card__title">🩺 Seguro viagem</h4>
             <p><b>Obrigatório para entrar na Espanha.</b> Precisa cobrir pelo menos <b>€30.000</b> em despesas médicas. Alguns cartões de crédito já oferecem o seguro de graça — vale perguntar ao banco. Leve a apólice impressa.</p>
+            <ul class="facts">
+              <li><span>Custo (15 dias)</span><b>R$ 180 a 560 por pessoa</b></li>
+            </ul>
+            <a class="btn btn--ghost" href="#seguro">Ver preços e onde cotar ↓</a>
           </div>
           <div class="card card--flat">
             <h4 class="card__title">🧾 Na imigração do aeroporto</h4>
-            <p>Podem pedir: <b>passagem de volta</b>, <b>reservas de hotel</b>, <b>seguro viagem</b> e prova de que tem dinheiro para a viagem. Na primeira entrada na Europa tiram <b>foto e digitais</b> numa máquina — é normal, faz parte do sistema novo.</p>
+            <p>Podem pedir: <b>passagem de volta</b>, <b>seguro viagem</b>, prova de que tem dinheiro para a viagem e <b>onde vão ficar</b>. Na primeira entrada na Europa tiram <b>foto e digitais</b> numa máquina — é normal, faz parte do sistema novo.</p>
+            <p>🏠 Em Barcelona vamos ficar em casa: tenham o <b>endereço completo impresso</b>. Quem recebe pode pedir na Polícia espanhola uma <b>carta de convite</b> (<i>carta de invitación</i>), que comprova a hospedagem.</p>
           </div>
         </div>
 
@@ -391,7 +398,7 @@
               </tbody>
             </table>
           </div>
-          <p class="note">Preços vistos no site da Nomad em outubro de 2026. Para uns 12 dias usando WhatsApp, mapa e fotos, 10 GB costuma bastar.</p>
+          <p class="note">Preços vistos no site da Nomad em outubro de 2026. Para uns 15 dias usando WhatsApp, mapa e fotos, 10 GB costuma bastar.</p>
         </div>
 
         <h3 class="h3" id="chip-howto">Instalar, ativar e desativar</h3>
@@ -528,51 +535,98 @@
               </tr>
             </thead>
             <tbody>
-              <tr data-min="2500" data-max="4000">
-                <th scope="row">🇧🇷 → 🇪🇸<br>São Paulo → Barcelona</th>
+              <tr data-min="300" data-max="300">
+                <th scope="row">1. Ida<br>Maringá → Guarulhos</th>
+                <td>Voo doméstico</td>
+                <td>cerca de 1 h</td>
+                <td class="num">R$ 300</td>
+                <td class="num" data-group>—</td>
+              </tr>
+              <tr data-min="5000" data-max="5000">
+                <th scope="row">2. Ida e volta<br>Guarulhos ⇄ Barcelona</th>
                 <td>TAP (via Lisboa), Iberia ou Air Europa (via Madri)</td>
-                <td>13 a 17 h, com 1 conexão</td>
-                <td class="num">R$ 2.500 a 4.000</td>
+                <td>13 a 17 h cada trecho, em geral com 1 conexão</td>
+                <td class="num">R$ 5.000</td>
                 <td class="num" data-group>—</td>
               </tr>
-              <tr data-min="250" data-max="700">
-                <th scope="row">🇪🇸 → 🇬🇧<br>Barcelona → Londres</th>
+              <tr data-min="500" data-max="1400">
+                <th scope="row">3. Ida e volta<br>Barcelona ⇄ Londres</th>
                 <td>Vueling, easyJet, Ryanair ou British Airways</td>
-                <td>cerca de 2 h, direto</td>
-                <td class="num">R$ 250 a 700</td>
+                <td>cerca de 2 h cada trecho, direto</td>
+                <td class="num">R$ 500 a 1.400</td>
                 <td class="num" data-group>—</td>
               </tr>
-              <tr data-min="2800" data-max="4500">
-                <th scope="row">🇬🇧 → 🇧🇷<br>Londres → São Paulo</th>
-                <td>British Airways ou LATAM (diretos), TAP (via Lisboa)</td>
-                <td>cerca de 12 h, direto</td>
-                <td class="num">R$ 2.800 a 4.500</td>
+              <tr data-min="300" data-max="300">
+                <th scope="row">4. Volta<br>Guarulhos → Maringá</th>
+                <td>Voo doméstico</td>
+                <td>cerca de 1 h</td>
+                <td class="num">R$ 300</td>
                 <td class="num" data-group>—</td>
               </tr>
             </tbody>
             <tfoot>
               <tr>
                 <th scope="row" colspan="3">Total das passagens</th>
-                <td class="num">R$ 5.550 a 9.200</td>
+                <td class="num" id="flights-total-pp">R$ 6.100 a 7.000</td>
                 <td class="num" id="flights-total">—</td>
               </tr>
             </tfoot>
           </table>
         </div>
-        <p class="note">Classe econômica, valores médios pesquisados em outubro de 2026. Saindo de outra cidade, o preço muda.</p>
+        <p class="note">Classe econômica, por pessoa. Guarulhos ⇄ Barcelona e os voos de Maringá são as nossas estimativas; Barcelona ⇄ Londres é uma média pesquisada em outubro de 2026.</p>
 
         <div class="callout">
           <span class="callout__icon" aria-hidden="true">💡</span>
           <div>
-            <strong>Para pagar menos:</strong> Compre uma passagem <b>“multidestinos”</b> (ida para Barcelona e volta saindo de
-            Londres) — costuma sair mais barato que duas separadas. Compre com 4 a 6 meses de antecedência e evite julho e
-            dezembro. Nas companhias baratas (Ryanair, easyJet, Vueling) a <b>mala é paga à parte</b>.
+            <strong>Para pagar menos e viajar tranquilo:</strong> Compre com 4 a 6 meses de antecedência e evite julho e
+            dezembro. Se der, compre <b>Maringá → Guarulhos na mesma reserva</b> do voo para Barcelona: se o primeiro voo
+            atrasar, a companhia tem que remarcar a conexão. Comprando separado, deixe <b>pelo menos 4 horas</b> entre os
+            voos. Nas companhias baratas (Ryanair, easyJet, Vueling) a <b>mala é paga à parte</b>.
             <a href="https://www.google.com/travel/flights?hl=pt-BR" target="_blank" rel="noopener">Pesquisar no Google Voos ↗</a>
           </div>
         </div>
 
+        <h3 class="h3" id="seguro">🩺 Seguro viagem (15 dias)</h3>
+        <p>Obrigatório para entrar na Espanha, com cobertura mínima de <b>€30.000</b> para despesas médicas. Escolha um plano <b>“Europa”</b>, que cobre também Londres. O preço sobe com a idade.</p>
+
+        <div class="grid-2">
+          <div class="card card--flat">
+            <h4 class="card__title">💵 Quanto custa (por pessoa)</h4>
+            <div class="table-wrap">
+              <table class="table table--compact">
+                <thead><tr><th scope="col">Idade</th><th scope="col" class="num">15 dias</th></tr></thead>
+                <tbody>
+                  <tr><td>Até 59 anos</td><td class="num">R$ 180 a 375</td></tr>
+                  <tr><td>60 a 70 anos<small>costuma custar uns 50% a mais</small></td><td class="num">R$ 270 a 560</td></tr>
+                </tbody>
+                <tfoot><tr><td id="ins-label">3 pessoas (2 com 60 anos ou mais)</td><td class="num" id="ins-group">R$ 720 a 1.495</td></tr></tfoot>
+              </table>
+            </div>
+            <div class="people people--inline">
+              <span id="seniors-label">Quantos têm 60 anos ou mais?</span>
+              <div class="stepper" data-stepper>
+                <button type="button" data-step="-1" aria-label="Menos uma pessoa com 60 anos ou mais">−</button>
+                <input type="number" id="seniors" value="2" min="0" max="10" inputmode="numeric" aria-labelledby="seniors-label">
+                <button type="button" data-step="1" aria-label="Mais uma pessoa com 60 anos ou mais">+</button>
+              </div>
+            </div>
+            <p class="note">Planos básicos com €30.000 de cobertura, pesquisados em outubro de 2026. Acima de 70 anos o preço pode dobrar. Quem tem alguma doença preexistente deve escolher um plano que cubra isso.</p>
+          </div>
+
+          <div class="card card--flat">
+            <h4 class="card__title">🔎 Onde cotar</h4>
+            <p>O <b>Assistente de Viagem</b> compara planos de várias seguradoras (como Assist Card, GTA, Porto Seguro e SulAmérica) num lugar só. Informe as datas, o destino <b>Europa</b> e a idade de cada um.</p>
+            <ul class="checks">
+              <li>Cobertura médica de pelo menos <b>€30.000</b> — para quem tem 60 anos ou mais, vale escolher uma cobertura maior</li>
+              <li>Datas cobrindo a viagem inteira, da saída de Maringá até a volta</li>
+              <li>Leve a apólice impressa e anote o telefone de emergência da seguradora</li>
+            </ul>
+            <a class="btn btn--accent" href="https://assistentedeviagem.com.br/" target="_blank" rel="noopener">Cotar no Assistente de Viagem ↗</a>
+          </div>
+        </div>
+
         <h3 class="h3">🍽️ Gastos do dia a dia: €40 por pessoa</h3>
-        <p>Os €40 são para <b>comida, transporte e pequenos gastos</b>. Hotel e ingressos dos passeios ficam fora dessa conta.</p>
+        <p>Os €40 são para <b>comida, transporte e pequenos gastos</b>. O hotel em Londres e os ingressos dos passeios ficam fora dessa conta. Em Barcelona não tem gasto com hospedagem: vamos ficar em casa 🏠.</p>
 
         <div class="grid-2">
           <article class="budget" style="--accent: var(--c-bcn)">
@@ -581,15 +635,15 @@
               <p class="budget__total">€40 <small data-eur-day>≈ R$ 232</small></p>
             </header>
             <div class="bar" aria-hidden="true">
-              <i style="--w:10%; --c:var(--d1)"></i><i style="--w:35%; --c:var(--d2)"></i><i style="--w:10%; --c:var(--d3)"></i><i style="--w:25%; --c:var(--d4)"></i><i style="--w:12.5%; --c:var(--d5)"></i><i style="--w:7.5%; --c:var(--d6)"></i>
+              <i style="--w:10%; --c:var(--d1)"></i><i style="--w:35%; --c:var(--d2)"></i><i style="--w:10%; --c:var(--d3)"></i><i style="--w:25%; --c:var(--d4)"></i><i style="--w:10%; --c:var(--d5)"></i><i style="--w:10%; --c:var(--d6)"></i>
             </div>
             <ul class="budget__list">
               <li style="--c:var(--d1)"><span>☕ Café da manhã <small>café com leite e croissant</small></span><b>€4</b></li>
               <li style="--c:var(--d2)"><span>🍽️ Almoço <small>“menú del día”: entrada, prato, sobremesa e bebida</small></span><b>€14</b></li>
               <li style="--c:var(--d3)"><span>🍦 Lanche e água <small>sorvete, fruta, garrafinha</small></span><b>€4</b></li>
               <li style="--c:var(--d4)"><span>🥘 Jantar <small>tapas simples ou mercado</small></span><b>€10</b></li>
-              <li style="--c:var(--d5)"><span>🚇 Metrô e ônibus <small>cartão T-casual, 10 viagens ≈ €12,55</small></span><b>€5</b></li>
-              <li style="--c:var(--d6)"><span>🎁 Reserva <small>banheiro, lembrancinha</small></span><b>€3</b></li>
+              <li style="--c:var(--d5)"><span>🚇 Metrô e ônibus <small>passe ilimitado T-usual (€22,80 por 30 dias), dividido pelos dias</small></span><b>€4</b></li>
+              <li style="--c:var(--d6)"><span>🎁 Reserva <small>banheiro, lembrancinha, um sorvete a mais</small></span><b>€4</b></li>
             </ul>
           </article>
 
@@ -619,7 +673,7 @@
               <span id="lbl-bcn">Dias em Barcelona</span>
               <div class="stepper" data-stepper>
                 <button type="button" data-step="-1" aria-label="Menos um dia em Barcelona">−</button>
-                <input type="number" id="days-bcn" value="7" min="0" max="60" inputmode="numeric" aria-labelledby="lbl-bcn">
+                <input type="number" id="days-bcn" value="12" min="0" max="60" inputmode="numeric" aria-labelledby="lbl-bcn">
                 <button type="button" data-step="1" aria-label="Mais um dia em Barcelona">+</button>
               </div>
             </div>
@@ -627,7 +681,7 @@
               <span id="lbl-ldn">Dias em Londres</span>
               <div class="stepper" data-stepper>
                 <button type="button" data-step="-1" aria-label="Menos um dia em Londres">−</button>
-                <input type="number" id="days-ldn" value="5" min="0" max="60" inputmode="numeric" aria-labelledby="lbl-ldn">
+                <input type="number" id="days-ldn" value="3" min="0" max="60" inputmode="numeric" aria-labelledby="lbl-ldn">
                 <button type="button" data-step="1" aria-label="Mais um dia em Londres">+</button>
               </div>
             </div>
@@ -658,7 +712,7 @@
               <small id="r-total-group">Grupo: R$ 26.100 a 37.200</small>
             </div>
           </div>
-          <p class="note">* Soma passagens + gastos do dia a dia + passaporte + ETA. <b>Não inclui hotel, seguro viagem nem ingressos.</b> Os reais já contam o IOF e a taxa do Wise (cerca de 4%).</p>
+          <p class="note">* Soma passagens + gastos do dia a dia + seguro viagem + passaporte + ETA. <b>Não inclui hotel em Londres nem ingressos.</b> Os reais já contam o IOF e a taxa do Wise (cerca de 4%).</p>
         </div>
 
         <a class="next" href="#compras">Próximo passo: <b>Compras baratas</b> →</a>
@@ -861,8 +915,9 @@
             <div class="place__body">
               <p class="place__tag">Dica de transporte</p>
               <h3>🚇 Metrô fácil</h3>
-              <p>Compre o cartão <b>T-casual</b> (10 viagens de metrô e ônibus) na máquina da estação — a tela tem opção em português.</p>
-              <p><b>Cada pessoa precisa do seu cartão.</b></p>
+              <p>Compre o passe <b>T-usual</b>: metrô, ônibus e trem <b>à vontade por 30 dias</b>, por cerca de <b>€22,80</b>. Vale até no metrô do aeroporto (linha L9).</p>
+              <p>Na máquina da estação (tem opção em português), informe o <b>número do passaporte</b>. O passe vai num cartão de plástico T-mobilitat (cerca de €4,50).</p>
+              <p><b>O passe é pessoal: cada pessoa precisa do seu.</b></p>
             </div>
           </aside>
         </div>
@@ -1013,13 +1068,11 @@
             <li><label><input type="checkbox" value="etias"><span>🇪🇺 Conferir se o ETIAS já começou</span></label></li>
             <li><label><input type="checkbox" value="seguro"><span>🩺 Seguro viagem contratado e impresso</span></label></li>
             <li><label><input type="checkbox" value="voos"><span>✈️ Passagens compradas</span></label></li>
-            <li><label><input type="checkbox" value="hotel-bcn"><span>🏨 Hospedagem em Barcelona reservada</span></label></li>
             <li><label><input type="checkbox" value="hotel-ldn"><span>🏨 Hospedagem em Londres reservada</span></label></li>
             <li><label><input type="checkbox" value="wise"><span>💳 Conta Wise criada e cartão ativado</span></label></li>
             <li><label><input type="checkbox" value="dinheiro"><span>💶 Dinheiro colocado em euro e libra</span></label></li>
             <li><label><input type="checkbox" value="esim"><span>📶 eSIM da Nomad instalado (ainda no Brasil)</span></label></li>
             <li><label><input type="checkbox" value="ingressos"><span>🎟️ Ingressos da Sagrada Família comprados</span></label></li>
-            <li><label><input type="checkbox" value="adaptador"><span>🔌 Adaptadores de tomada: Espanha (2 pinos redondos) e Inglaterra (3 pinos retangulares)</span></label></li>
             <li><label><input type="checkbox" value="remedios"><span>💊 Remédios de uso contínuo, com a receita</span></label></li>
             <li><label><input type="checkbox" value="copias"><span>📸 Foto dos documentos no celular e cópia em papel</span></label></li>
             <li><label><input type="checkbox" value="cartao"><span>🏦 Avisar o banco e liberar o cartão de crédito para uso no exterior</span></label></li>

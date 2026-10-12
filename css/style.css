@@ -548,12 +548,13 @@ small { font-size: .85em; }
   margin: 40px 0 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 18px;
 }
 .route li {
   position: relative;
   display: grid;
+  align-content: start;
   gap: 2px;
   padding: 16px 18px;
   background: var(--paper);
@@ -580,6 +581,11 @@ small { font-size: .85em; }
 .route strong { font-size: 1.1rem; }
 .route span:last-child { font-size: .88rem; color: var(--ink-2); }
 
+@media (max-width: 1100px) {
+  .route { grid-template-columns: repeat(3, 1fr); }
+  .route li:nth-child(3n)::after { display: none; }
+}
+
 @media (max-width: 920px) {
   .hero { padding-top: 36px; }
   .hero__grid { grid-template-columns: 1fr; gap: 24px; }
@@ -588,7 +594,8 @@ small { font-size: .85em; }
   .postcard--ldn { height: 210px; top: 100px; }
   .postmark { width: 90px; height: 90px; font-size: 12px; }
   .route { grid-template-columns: 1fr 1fr; }
-  .route li:nth-child(2)::after { display: none; }
+  .route li:nth-child(3n)::after { display: grid; }
+  .route li:nth-child(2n)::after { display: none; }
 }
 
 @media (max-width: 480px) {
@@ -1334,6 +1341,7 @@ small { font-size: .85em; }
 .stepper input::-webkit-outer-spin-button,
 .stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
+.people--inline { margin: 18px 0 0; font-size: 1rem; }
 .table--flights tbody th { min-width: 12em; }
 .table--flights [data-group] { color: var(--accent); }
 
