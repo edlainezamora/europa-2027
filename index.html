@@ -225,15 +225,7 @@
             </ul>
             <a class="btn btn--ghost" href="https://travel-europe.europa.eu/etias_pt" target="_blank" rel="noopener">Confira se já começou ↗</a>
           </div>
-          <div class="card card--flat">
-            <h4 class="card__title">🩺 Seguro viagem</h4>
-            <p><b>Obrigatório para entrar na Espanha.</b> Precisa cobrir pelo menos <b>€30.000</b> em despesas médicas. Alguns cartões de crédito já oferecem o seguro de graça — vale perguntar ao banco. Leve a apólice impressa.</p>
-            <ul class="facts">
-              <li><span>15 dias</span><b>R$ 180 a 560 por pessoa</b></li>
-            </ul>
-            <a class="btn btn--ghost" href="#seguro">Ver preços e onde cotar ↓</a>
-          </div>
-          <div class="card card--flat">
+          <div class="card card--flat card--wide">
             <h4 class="card__title">🧾 Na imigração do aeroporto</h4>
             <p>Podem pedir: <b>passagem de volta</b>, <b>seguro viagem</b>, prova de que tem dinheiro para a viagem e <b>onde vão ficar</b>. Na primeira entrada na Europa tiram <b>foto e digitais</b> numa máquina — é normal, faz parte do sistema novo.</p>
             <p>🏠 Em Barcelona vamos ficar em casa: tenham o <b>endereço completo impresso</b>. Quem recebe pode pedir na Polícia espanhola uma <b>carta de convite</b> (<i>carta de invitación</i>), que comprova a hospedagem.</p>
@@ -603,129 +595,21 @@
           <span>💱 Cotação de hoje:</span>
           <b>€1 = <span data-rate="eur">R$ 5,57</span></b>
           <b>£1 = <span data-rate="gbp">R$ 6,58</span></b>
+          <b>US$1 = <span data-rate="usd">R$ 4,99</span></b>
           <small id="rates-status">valores de referência</small>
-        </div>
-
-        <h3 class="h3">✈️ Passagens de avião</h3>
-        <div class="people">
-          <span id="people-label">Quantas pessoas vão?</span>
-          <div class="stepper" data-stepper>
-            <button type="button" data-step="-1" aria-label="Menos uma pessoa">−</button>
-            <input type="number" id="people" value="1" min="1" max="10" inputmode="numeric" aria-labelledby="people-label">
-            <button type="button" data-step="1" aria-label="Mais uma pessoa">+</button>
-          </div>
-        </div>
-
-        <div class="table-wrap">
-          <table class="table table--flights" id="flights" data-stack>
-            <thead>
-              <tr>
-                <th scope="col">Trecho</th>
-                <th scope="col">Companhias</th>
-                <th scope="col">Duração</th>
-                <th scope="col" class="num">Por pessoa</th>
-                <th scope="col" class="num">Para o grupo</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr data-min="300" data-max="300">
-                <th scope="row">1. Ida<br>Maringá → Guarulhos</th>
-                <td>Voo doméstico</td>
-                <td>cerca de 1 h</td>
-                <td class="num">R$ 300</td>
-                <td class="num" data-group>—</td>
-              </tr>
-              <tr data-min="5000" data-max="5000">
-                <th scope="row">2. Ida e volta<br>Guarulhos ⇄ Barcelona</th>
-                <td>TAP (via Lisboa), Iberia ou Air Europa (via Madri)</td>
-                <td>13 a 17 h cada trecho, em geral com 1 conexão</td>
-                <td class="num">R$ 5.000</td>
-                <td class="num" data-group>—</td>
-              </tr>
-              <tr data-min="500" data-max="1400">
-                <th scope="row">3. Ida e volta<br>Barcelona ⇄ Londres</th>
-                <td>Vueling, easyJet, Ryanair ou British Airways</td>
-                <td>cerca de 2 h cada trecho, direto</td>
-                <td class="num">R$ 500 a 1.400</td>
-                <td class="num" data-group>—</td>
-              </tr>
-              <tr data-min="300" data-max="300">
-                <th scope="row">4. Volta<br>Guarulhos → Maringá</th>
-                <td>Voo doméstico</td>
-                <td>cerca de 1 h</td>
-                <td class="num">R$ 300</td>
-                <td class="num" data-group>—</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <th scope="row" colspan="3">Total das passagens</th>
-                <td class="num" id="flights-total-pp">R$ 6.100 a 7.000</td>
-                <td class="num" id="flights-total">—</td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
-        <p class="note">Classe econômica, por pessoa. Guarulhos ⇄ Barcelona e os voos de Maringá são as nossas estimativas; Barcelona ⇄ Londres é uma média pesquisada em outubro de 2026.</p>
-
-        <div class="callout">
-          <span class="callout__icon" aria-hidden="true">💡</span>
-          <div>
-            <strong>Para pagar menos e viajar tranquilo:</strong> Compre com 4 a 6 meses de antecedência e evite julho e
-            dezembro. Se der, compre <b>Maringá → Guarulhos na mesma reserva</b> do voo para Barcelona: se o primeiro voo
-            atrasar, a companhia tem que remarcar a conexão. Comprando separado, deixe <b>pelo menos 4 horas</b> entre os
-            voos. Nas companhias baratas (Ryanair, easyJet, Vueling) a <b>mala é paga à parte</b>.
-            <a href="https://www.google.com/travel/flights?hl=pt-BR" target="_blank" rel="noopener">Pesquisar no Google Voos ↗</a>
-          </div>
-        </div>
-
-        <h3 class="h3">🩺 Seguro viagem</h3>
-        <p>Para <span data-ins-label>1 pessoa (1 com 60 anos ou mais)</span>, 15 dias: <b data-ins-group>R$ 270 a 560</b> no total. Já está somado na calculadora lá embaixo. <a href="#seguro">Ver detalhes e onde cotar (Passo 2) ↑</a></p>
-
-        <h3 class="h3">🍽️ Gastos do dia a dia: €40 por pessoa</h3>
-        <p>Os €40 são para <b>comida, transporte e pequenos gastos</b>. O hotel em Londres e os ingressos dos passeios ficam fora dessa conta. Em Barcelona não tem gasto com hospedagem: vamos ficar em casa 🏠.</p>
-
-        <div class="grid-2">
-          <article class="budget" style="--accent: var(--c-bcn)">
-            <header class="budget__head">
-              <h4>🇪🇸 Um dia em Barcelona</h4>
-              <p class="budget__total">€40 <small data-eur-day>≈ R$ 232</small></p>
-            </header>
-            <div class="bar" aria-hidden="true">
-              <i style="--w:10%; --c:var(--d1)"></i><i style="--w:35%; --c:var(--d2)"></i><i style="--w:10%; --c:var(--d3)"></i><i style="--w:25%; --c:var(--d4)"></i><i style="--w:10%; --c:var(--d5)"></i><i style="--w:10%; --c:var(--d6)"></i>
-            </div>
-            <ul class="budget__list">
-              <li style="--c:var(--d1)"><span>☕ Café da manhã <small>café com leite e croissant</small></span><b>€4</b></li>
-              <li style="--c:var(--d2)"><span>🍽️ Almoço <small>“menú del día”: entrada, prato, sobremesa e bebida</small></span><b>€14</b></li>
-              <li style="--c:var(--d3)"><span>🍦 Lanche e água <small>sorvete, fruta, garrafinha</small></span><b>€4</b></li>
-              <li style="--c:var(--d4)"><span>🥘 Jantar <small>tapas simples ou mercado</small></span><b>€10</b></li>
-              <li style="--c:var(--d5)"><span>🚇 Metrô e ônibus <small>passe ilimitado T-usual (€22,80 por 30 dias), dividido pelos dias</small></span><b>€4</b></li>
-              <li style="--c:var(--d6)"><span>🎁 Reserva <small>banheiro, lembrancinha, um sorvete a mais</small></span><b>€4</b></li>
-            </ul>
-          </article>
-
-          <article class="budget" style="--accent: var(--c-ldn)">
-            <header class="budget__head">
-              <h4>🇬🇧 Um dia em Londres</h4>
-              <p class="budget__total">€40 <small data-gbp-day>≈ £34</small></p>
-            </header>
-            <div class="bar" aria-hidden="true">
-              <i style="--w:15%; --c:var(--d1)"></i><i style="--w:15%; --c:var(--d2)"></i><i style="--w:6%; --c:var(--d3)"></i><i style="--w:38%; --c:var(--d4)"></i><i style="--w:26%; --c:var(--d5)"></i>
-            </div>
-            <ul class="budget__list">
-              <li style="--c:var(--d1)"><span>☕ Café da manhã <small>café e muffin numa cafeteria</small></span><b>£5</b></li>
-              <li style="--c:var(--d2)"><span>🥪 Almoço <small>“meal deal” do mercado: sanduíche + bebida + lanche</small></span><b>£5</b></li>
-              <li style="--c:var(--d3)"><span>🍫 Lanche e água</span><b>£2</b></li>
-              <li style="--c:var(--d4)"><span>🍟 Jantar <small>fish &amp; chips ou prato de pub</small></span><b>£13</b></li>
-              <li style="--c:var(--d5)"><span>🚇 Metrô e ônibus <small>limite diário por aproximação</small></span><b>£9</b></li>
-            </ul>
-            <p class="note">Londres é mais cara: os €40 viram uns £34. Dá, mas é apertado — o “meal deal” e os museus grátis ajudam muito.</p>
-          </article>
         </div>
 
         <div class="calc" id="calc">
           <h3 class="calc__title">🧮 Calculadora da viagem</h3>
           <div class="calc__inputs">
+            <div class="field">
+              <span id="people-label">Quantas pessoas vão?</span>
+              <div class="stepper" data-stepper>
+                <button type="button" data-step="-1" aria-label="Menos uma pessoa">−</button>
+                <input type="number" id="people" value="1" min="1" max="10" inputmode="numeric" aria-labelledby="people-label">
+                <button type="button" data-step="1" aria-label="Mais uma pessoa">+</button>
+              </div>
+            </div>
             <div class="field">
               <span id="lbl-bcn">Dias em Barcelona</span>
               <div class="stepper" data-stepper>
@@ -769,8 +653,84 @@
               <small id="r-total-group">Total: R$ 10.200 a 11.400</small>
             </div>
           </div>
-          <p class="note">* Soma passagens + gastos do dia a dia + seguro viagem + passaporte + ETA. <b>Não inclui hotel em Londres nem ingressos.</b> Os reais já contam o IOF e a taxa do Wise (cerca de 4%).</p>
+          <div class="receipt">
+            <h4 class="receipt__title">📋 Todos os custos, item por item</h4>
+            <p class="receipt__sub">Tudo o que entra na conta da viagem. Os valores mudam quando você muda os dias, as pessoas ou a cotação.</p>
+            <div class="table-wrap">
+              <table class="table receipt__table" id="cost-table" data-stack>
+                <thead>
+                  <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Detalhe</th>
+                    <th scope="col" class="num">Valor</th>
+                    <th scope="col" class="num">Por pessoa</th>
+                    <th scope="col" class="num" data-col-group>Para o grupo</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                  <tr>
+                    <th scope="row" colspan="3">Total da viagem</th>
+                    <td class="num" id="ct-total-pp">—</td>
+                    <td class="num" id="ct-total-group" data-col-group>—</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+          <p class="note">* O total soma todos os itens da tabela. Os valores em euro, libra e dólar já contam o IOF e as taxas do cartão (cerca de 4%). O hotel em Londres e os ingressos são estimativas.</p>
         </div>
+
+        <h3 class="h3">🍽️ Gastos do dia a dia: <span data-daily-eur>€40</span> por pessoa</h3>
+        <p>Os <span data-daily-eur>€40</span> por dia (valor escolhido na calculadora) são para <b>comida, transporte e pequenos gastos</b>. O hotel em Londres e os ingressos dos passeios ficam fora desse valor, mas entram na tabela completa da calculadora. Em Barcelona não tem gasto com hospedagem: vamos ficar em casa 🏠.</p>
+
+        <div class="grid-2">
+          <article class="budget" style="--accent: var(--c-bcn)" data-budget="eur">
+            <header class="budget__head">
+              <h4>🇪🇸 Um dia em Barcelona</h4>
+              <p class="budget__total"><span data-daily-eur>€40</span> <small data-eur-day>≈ R$ 232</small></p>
+            </header>
+            <div class="bar" aria-hidden="true">
+              <i style="--w:10%; --c:var(--d1)"></i><i style="--w:35%; --c:var(--d2)"></i><i style="--w:10%; --c:var(--d3)"></i><i style="--w:25%; --c:var(--d4)"></i><i style="--w:10%; --c:var(--d5)"></i><i style="--w:10%; --c:var(--d6)"></i>
+            </div>
+            <ul class="budget__list">
+              <li style="--c:var(--d1)"><span>☕ Café da manhã <small>café com leite e croissant</small></span><b data-base="4">€4</b></li>
+              <li style="--c:var(--d2)"><span>🍽️ Almoço <small>“menú del día”: entrada, prato, sobremesa e bebida</small></span><b data-base="14">€14</b></li>
+              <li style="--c:var(--d3)"><span>🍦 Lanche e água <small>sorvete, fruta, garrafinha</small></span><b data-base="4">€4</b></li>
+              <li style="--c:var(--d4)"><span>🥘 Jantar <small>tapas simples ou mercado</small></span><b data-base="10">€10</b></li>
+              <li style="--c:var(--d5)"><span>🚇 Metrô e ônibus <small>passe ilimitado T-usual (€22,80 por 30 dias), dividido pelos dias</small></span><b data-base="4">€4</b></li>
+              <li style="--c:var(--d6)"><span>🎁 Reserva <small>banheiro, lembrancinha, um sorvete a mais</small></span><b data-base="4">€4</b></li>
+            </ul>
+          </article>
+
+          <article class="budget" style="--accent: var(--c-ldn)" data-budget="gbp">
+            <header class="budget__head">
+              <h4>🇬🇧 Um dia em Londres</h4>
+              <p class="budget__total"><span data-daily-eur>€40</span> <small data-gbp-day>≈ £34</small></p>
+            </header>
+            <div class="bar" aria-hidden="true">
+              <i style="--w:15%; --c:var(--d1)"></i><i style="--w:15%; --c:var(--d2)"></i><i style="--w:6%; --c:var(--d3)"></i><i style="--w:38%; --c:var(--d4)"></i><i style="--w:26%; --c:var(--d5)"></i>
+            </div>
+            <ul class="budget__list">
+              <li style="--c:var(--d1)"><span>☕ Café da manhã <small>café e muffin numa cafeteria</small></span><b data-base="5">£5</b></li>
+              <li style="--c:var(--d2)"><span>🥪 Almoço <small>“meal deal” do mercado: sanduíche + bebida + lanche</small></span><b data-base="5">£5</b></li>
+              <li style="--c:var(--d3)"><span>🍫 Lanche e água</span><b data-base="2">£2</b></li>
+              <li style="--c:var(--d4)"><span>🍟 Jantar <small>fish &amp; chips ou prato de pub</small></span><b data-base="13">£13</b></li>
+              <li style="--c:var(--d5)"><span>🚇 Metrô e ônibus <small>limite diário por aproximação</small></span><b data-base="9">£9</b></li>
+            </ul>
+            <p class="note">Londres é mais cara: os <span data-daily-eur>€40</span> viram uns <span data-daily-gbp>£34</span>. O “meal deal” e os museus grátis ajudam muito.</p>
+          </article>
+        </div>
+
+        <div class="callout">
+          <span class="callout__icon" aria-hidden="true">💡</span>
+          <div>
+            <strong>Dicas para as passagens:</strong> Compre com 4 a 6 meses de antecedência e evite julho e
+            dezembro. Se der, compre <b>Maringá → Guarulhos na mesma reserva</b> do voo para Barcelona: se o primeiro voo
+            atrasar, a companhia tem que remarcar a conexão. Comprando separado, deixe <b>pelo menos 4 horas</b> entre os
+            voos. Nas companhias baratas (Ryanair, easyJet, Vueling) a <b>mala é paga à parte</b>.
+            <a href="https://www.google.com/travel/flights?hl=pt-BR" target="_blank" rel="noopener">Pesquisar no Google Voos ↗</a>
+          </div>
 
         <a class="next" href="#compras">Próximo passo: <b>Compras baratas</b> →</a>
       </div>

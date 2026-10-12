@@ -27,15 +27,26 @@
   const roundTo = (n, step) => Math.round(n / step) * step;
 
   /* ---------- custos fixos ---------- */
+  const FLIGHTS = [             // R$ por pessoa
+    { name: 'Maringá → Guarulhos', detail: 'Ida · voo doméstico, cerca de 1 h', min: 300, max: 300 },
+    { name: 'Guarulhos ⇄ Barcelona', detail: 'Ida e volta · TAP, Iberia ou Air Europa, em geral com 1 conexão', min: 5000, max: 5000 },
+    { name: 'Barcelona ⇄ Londres', detail: 'Ida e volta · Vueling, easyJet, Ryanair ou British Airways, cerca de 2 h', min: 500, max: 1400 },
+    { name: 'Guarulhos → Maringá', detail: 'Volta · voo doméstico, cerca de 1 h', min: 300, max: 300 },
+  ];
   const PASSPORT_FEE = 257.25;  // R$, passaporte comum (PF, 2026)
   const ETA_GBP = 20;           // £, autorização do Reino Unido
+  const ETIAS_EUR = 20;         // €, autorização da Europa (prevista para 2027)
+  const ESIM_USD = 30;          // US$, Nomad Europa 10 GB / 30 dias
+  const HOTEL_LDN_GBP = [40, 90]; // £ por pessoa por noite, hotel simples dividindo o quarto
+  const TICKETS_BCN_EUR = 44;   // € Sagrada Família (~26) + Park Güell (~18)
+  const TICKETS_LDN_GBP = 65;   // £ London Eye (~30) + Torre de Londres (~35)
   const FEES = 1.04;            // IOF (3,5%) + taxa do Wise ≈ 4%
   const INSURANCE = {           // R$, seguro viagem Europa 15 dias, por pessoa
     young: [180, 375],          // até 59 anos
     senior: [270, 560],         // 60 a 70 anos
   };
 
-  const rates = { eur: 5.57, gbp: 6.58 }; // referência de out/2026, atualizada pela internet
+  const rates = { eur: 5.57, gbp: 6.58, usd: 4.99 }; // referência de out/2026, atualizada pela internet
 
   /* ---------- menus montados a partir das seções ---------- */
   const sections = $$('main section[data-label]');
@@ -197,26 +208,34 @@
   const daysBcn = $('#days-bcn');
   const daysLdn = $('#days-ldn');
   const dailyInput = $('#daily');
-  const flightRows = $$('#flights tbody tr');
+  const costTable = $('#cost-table');
 
   const num = (input) => Math.max(0, Number(input.value) || 0);
   const range = (a, b) => (a === b ? fmtBRL.format(a) : `${fmtBRL.format(a)} a ${fmtNum.format(b)}`);
 
+  // "um dia em Barcelona / Londres": tudo proporcional ao valor de "Euros por dia"
+  const renderDaily = (dailyEur) => {
+    const gbpDay = Math.round((dailyEur * rates.eur) / rates.gbp);
+    $$('[data-daily-eur]').forEach((el) => { el.textContent = `€${dailyEur}`; });
+    $$('[data-daily-gbp]').forEach((el) => { el.textContent = `£${gbpDay}`; });
+    $$('[data-eur-day]').forEach((el) => { el.textContent = '≈ ' + fmtBRL.format(dailyEur * rates.eur * FEES); });
+    $$('[data-gbp-day]').forEach((el) => { el.textContent = `≈ £${gbpDay}`; });
+
+    $$('[data-budget]').forEach((card) => {
+      const symbol = card.dataset.budget === 'gbp' ? '£' : '€';
+      const target = card.dataset.budget === 'gbp' ? gbpDay : dailyEur;
+      const items = $$('[data-base]', card);
+      const base = items.reduce((acc, el) => acc + Number(el.dataset.base), 0);
+      const values = items.map((el) => Math.round((Number(el.dataset.base) * target) / base));
+      // ajusta o arredondamento no maior item para a soma bater com o total do dia
+      const biggest = values.indexOf(Math.max(...values));
+      values[biggest] += target - values.reduce((acc, v) => acc + v, 0);
+      items.forEach((el, i) => { el.textContent = `${symbol}${values[i]}`; });
+    });
+  };
+
   const renderCosts = () => {
     const people = Math.max(1, num(peopleInput));
-
-    // passagens
-    let fMin = 0;
-    let fMax = 0;
-    flightRows.forEach((row) => {
-      const min = Number(row.dataset.min);
-      const max = Number(row.dataset.max);
-      fMin += min;
-      fMax += max;
-      $('[data-group]', row).textContent = range(min * people, max * people);
-    });
-    $('#flights-total-pp').textContent = range(fMin, fMax);
-    $('#flights-total').textContent = range(fMin * people, fMax * people);
 
     // gastos do dia a dia
     const dailyEur = num(dailyInput);
@@ -224,6 +243,7 @@
     const eurPP = totalDays * dailyEur;
     const brlPP = eurPP * rates.eur * FEES;
 
+    renderDaily(dailyEur);
     $('#r-daily-eur').textContent = fmtEUR.format(eurPP);
     $('#r-daily-brl').textContent = '≈ ' + fmtBRL.format(roundTo(brlPP, 10));
     $('#r-people-txt').textContent = people === 1 ? '1 pessoa' : `${people} pessoas`;
@@ -240,17 +260,71 @@
     $$('[data-ins-label]').forEach((el) => { el.textContent = insLabel; });
     $$('[data-ins-group]').forEach((el) => { el.textContent = range(insMin, insMax); });
 
-    // viagem completa (sem hotel em Londres e ingressos)
-    const fixedPP = brlPP + PASSPORT_FEE + ETA_GBP * rates.gbp;
-    const insPPMin = young > 0 ? INSURANCE.young[0] : INSURANCE.senior[0];
-    const insPPMax = seniors > 0 ? INSURANCE.senior[1] : INSURANCE.young[1];
-    $('#r-total-pp').textContent = range(
-      roundTo(fMin + fixedPP + insPPMin, 100),
-      roundTo(fMax + fixedPP + insPPMax, 100),
-    );
-    const gMin = roundTo((fMin + fixedPP) * people + insMin, 100);
-    const gMax = roundTo((fMax + fixedPP) * people + insMax, 100);
-    $('#r-total-group').textContent = `${people === 1 ? 'Total' : 'Grupo'}: ${range(gMin, gMax)}`;
+    // tabela com todos os custos, item por item
+    const bcnDays = num(daysBcn);
+    const ldnDays = num(daysLdn);
+    const eurBRL = rates.eur * FEES;
+    const gbpBRL = rates.gbp * FEES;
+    const usdBRL = rates.usd * FEES;
+    const rows = [];
+    const add = (cat, name, detail, orig, ppMin, ppMax = ppMin, gMin = ppMin * people, gMax = ppMax * people) => {
+      rows.push({ cat, name, detail, orig, ppMin, ppMax, gMin, gMax });
+    };
+
+    FLIGHTS.forEach((f) => add('✈️ Passagens de avião', f.name, f.detail, '—', f.min, f.max));
+
+    add('📄 Documentos', 'Passaporte', 'Taxa da Polícia Federal', '—', PASSPORT_FEE);
+    add('📄 Documentos', 'ETA (Reino Unido)', 'Autorização para entrar na Inglaterra', `£${ETA_GBP}`, ETA_GBP * gbpBRL);
+    add('📄 Documentos', 'ETIAS (Europa)', 'Previsto para começar em 2027', `€${ETIAS_EUR}`, ETIAS_EUR * eurBRL);
+
+    add('🩺 Seguro viagem', 'Seguro viagem', `Plano Europa, 15 dias (${seniors} com 60 anos ou mais)`, '—',
+      young > 0 ? INSURANCE.young[0] : INSURANCE.senior[0],
+      seniors > 0 ? INSURANCE.senior[1] : INSURANCE.young[1],
+      insMin, insMax);
+
+    if (bcnDays) add('🍽️ Gastos do dia a dia', 'Barcelona', `${bcnDays} dias × €${dailyEur} (comida, transporte, extras)`, `€${fmtNum.format(bcnDays * dailyEur)}`, bcnDays * dailyEur * eurBRL);
+    if (ldnDays) add('🍽️ Gastos do dia a dia', 'Londres', `${ldnDays} dias × €${dailyEur} (comida, transporte, extras)`, `€${fmtNum.format(ldnDays * dailyEur)}`, ldnDays * dailyEur * eurBRL);
+
+    if (bcnDays) add('🏨 Hospedagem', 'Barcelona', 'Em casa 🏠', '—', 0);
+    if (ldnDays) {
+      add('🏨 Hospedagem', 'Hotel em Londres', `${ldnDays} ${ldnDays === 1 ? 'noite' : 'noites'}, hotel simples dividindo o quarto (estimativa)`,
+        `£${ldnDays * HOTEL_LDN_GBP[0]} a £${ldnDays * HOTEL_LDN_GBP[1]}`,
+        ldnDays * HOTEL_LDN_GBP[0] * gbpBRL, ldnDays * HOTEL_LDN_GBP[1] * gbpBRL);
+    }
+
+    add('📶 Internet no celular', 'Chip virtual Nomad', 'Pacote Europa 10 GB, 30 dias', `US$ ${ESIM_USD}`, ESIM_USD * usdBRL);
+
+    if (bcnDays) add('🎟️ Ingressos (sugestão)', 'Barcelona', 'Sagrada Família e Park Güell', `€${TICKETS_BCN_EUR}`, TICKETS_BCN_EUR * eurBRL);
+    if (ldnDays) add('🎟️ Ingressos (sugestão)', 'Londres', 'London Eye e Torre de Londres', `£${TICKETS_LDN_GBP}`, TICKETS_LDN_GBP * gbpBRL);
+
+    const r = (a, b) => range(Math.round(a), Math.round(b));
+    let html = '';
+    let lastCat = '';
+    rows.forEach((row) => {
+      if (row.cat !== lastCat) {
+        html += `<tr class="ct-cat"><th colspan="5" scope="colgroup">${row.cat}</th></tr>`;
+        lastCat = row.cat;
+      }
+      html += '<tr>' +
+        `<th scope="row">${row.name}</th>` +
+        `<td class="ct-detail" data-label="Detalhe">${row.detail}</td>` +
+        `<td class="num ct-orig${row.orig === '—' ? ' is-empty' : ''}" data-label="Valor">${row.orig}</td>` +
+        `<td class="num ct-pp" data-label="Por pessoa">${row.ppMax === 0 ? 'R$ 0' : r(row.ppMin, row.ppMax)}</td>` +
+        `<td class="num ct-group" data-label="Para o grupo" data-col-group>${row.gMax === 0 ? 'R$ 0' : r(row.gMin, row.gMax)}</td>` +
+        '</tr>';
+    });
+    $('tbody', costTable).innerHTML = html;
+    costTable.classList.toggle('is-solo', people === 1);
+
+    const sum = (key) => rows.reduce((acc, row) => acc + row[key], 0);
+    const totPP = [roundTo(sum('ppMin'), 10), roundTo(sum('ppMax'), 10)];
+    const totG = [roundTo(sum('gMin'), 10), roundTo(sum('gMax'), 10)];
+    $('#ct-total-pp').textContent = range(...totPP);
+    $('#ct-total-group').textContent = range(...totG);
+
+    // viagem completa = soma da tabela
+    $('#r-total-pp').textContent = range(...totPP);
+    $('#r-total-group').textContent = `${people === 1 ? 'Total' : 'Grupo'}: ${range(...totG)}`;
   };
 
   seniorsInput.addEventListener('input', () => {
@@ -262,14 +336,9 @@
   const renderRates = () => {
     $$('[data-rate="eur"]').forEach((el) => { el.textContent = fmtBRL2.format(rates.eur); });
     $$('[data-rate="gbp"]').forEach((el) => { el.textContent = fmtBRL2.format(rates.gbp); });
+    $$('[data-rate="usd"]').forEach((el) => { el.textContent = fmtBRL2.format(rates.usd); });
     $$('[data-gbp]').forEach((el) => {
       el.textContent = `(≈ ${fmtBRL.format(Number(el.dataset.gbp) * rates.gbp)})`;
-    });
-    $$('[data-eur-day]').forEach((el) => {
-      el.textContent = '≈ ' + fmtBRL.format(roundTo(40 * rates.eur * FEES, 1));
-    });
-    $$('[data-gbp-day]').forEach((el) => {
-      el.textContent = '≈ £' + Math.round((40 * rates.eur) / rates.gbp);
     });
     renderCosts();
   };
@@ -279,7 +348,7 @@
     const ctrl = new AbortController();
     const timer = setTimeout(() => ctrl.abort(), 7000);
     try {
-      const res = await fetch('https://economia.awesomeapi.com.br/json/last/EUR-BRL,GBP-BRL', { signal: ctrl.signal });
+      const res = await fetch('https://economia.awesomeapi.com.br/json/last/EUR-BRL,GBP-BRL,USD-BRL', { signal: ctrl.signal });
       if (!res.ok) throw new Error(res.status);
       const data = await res.json();
       const eur = Number(data.EURBRL?.bid);
@@ -287,6 +356,8 @@
       if (!(eur > 0 && gbp > 0)) throw new Error('cotação inválida');
       rates.eur = eur;
       rates.gbp = gbp;
+      const usd = Number(data.USDBRL?.bid);
+      if (usd > 0) rates.usd = usd;
       const when = (data.EURBRL.create_date || '').split(' ');
       const [yy, mm, dd] = (when[0] || '').split('-');
       status.textContent = dd ? `atualizada em ${dd}/${mm}/${yy}, às ${(when[1] || '').slice(0, 5)}` : 'atualizada agora';

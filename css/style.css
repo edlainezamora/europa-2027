@@ -777,7 +777,7 @@ small { font-size: .85em; }
 }
 /* deixa tabelas e textos longos encolherem dentro da grade (evita rolagem lateral no celular) */
 .grid-2 > *, .grid-3 > *, .explain > *, .hero__grid > *, .cards > *, .guide > *, .phases > * { min-width: 0; }
-@media (min-width: 820px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 820px) { .grid-2 { grid-template-columns: 1fr 1fr; } .grid-2 > .card--wide { grid-column: 1 / -1; } }
 @media (min-width: 980px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
 
 /* cartões */
@@ -1344,8 +1344,6 @@ small { font-size: .85em; }
 .stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
 .people--inline { margin: 18px 0 0; font-size: 1rem; }
-.table--flights tbody th { min-width: 12em; }
-.table--flights [data-group] { color: var(--accent); }
 
 .budget {
   padding: 24px;
@@ -1466,6 +1464,85 @@ small { font-size: .85em; }
 .result--big span, .result--big small { opacity: 1; }
 .result--big b { color: var(--ink); font-size: 1.75rem; }
 .calc .note { color: rgba(255, 255, 255, .82); margin-top: 18px; }
+
+/* tabela com todos os custos (dentro da calculadora) */
+.receipt {
+  margin-top: 26px;
+  padding: 24px;
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 20px;
+}
+.receipt__title {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 800;
+  font-size: 1.35rem;
+  margin-bottom: 4px;
+}
+.receipt__sub { color: var(--ink-2); font-size: .95rem; margin-bottom: 16px; }
+.receipt__table tbody th[scope="row"] { font-weight: 700; }
+.receipt__table td:nth-child(2) { color: var(--ink-2); font-size: .92rem; }
+.receipt__table .ct-cat th {
+  padding-top: 18px;
+  background: #F6F0E6;
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+.receipt__table tfoot th,
+.receipt__table tfoot td {
+  background: var(--sun);
+  font-size: 1.1rem;
+}
+.receipt__table.is-solo [data-col-group] { display: none !important; }
+@media (max-width: 600px) {
+  .receipt { padding: 18px 14px; }
+}
+@media (max-width: 720px) {
+  .is-stackable tr.ct-cat {
+    margin: 22px 0 8px;
+    background: transparent;
+    border: 0;
+  }
+  .is-stackable tr.ct-cat th { background: transparent; padding: 0 4px; font-size: 1.15rem; }
+  .receipt__table.is-stackable tfoot tr { background: var(--sun); }
+
+  /* cada item numa linha compacta: nome e valor lado a lado, detalhe embaixo */
+  .receipt__table.is-stackable tbody tr:not(.ct-cat) {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 12px;
+    row-gap: 2px;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+  }
+  .receipt__table.is-stackable tbody tr:not(.ct-cat) > * {
+    display: block;
+    width: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+  .receipt__table.is-stackable tbody th[scope="row"] { grid-column: 1; font-size: 1.02rem; }
+  .receipt__table.is-stackable .ct-pp { grid-column: 2; grid-row: 1; text-align: right; font-size: 1.05rem; white-space: nowrap; }
+  .receipt__table.is-stackable .ct-detail,
+  .receipt__table.is-stackable .ct-orig,
+  .receipt__table.is-stackable .ct-group { grid-column: 1 / -1; }
+  .receipt__table.is-stackable .ct-pp::before,
+  .receipt__table.is-stackable .ct-detail::before { content: none; }
+  .receipt__table.is-stackable .ct-orig,
+  .receipt__table.is-stackable .ct-group { font-size: .9rem; font-weight: 400; color: var(--ink-2); }
+  .receipt__table.is-stackable .ct-orig.is-empty { display: none; }
+  .receipt__table.is-stackable .ct-orig::before,
+  .receipt__table.is-stackable .ct-group::before {
+    content: attr(data-label) ": ";
+    display: inline;
+    font-size: inherit;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+}
 
 /* ---------- lugares (lojas e passeios) ---------- */
 .cards {
