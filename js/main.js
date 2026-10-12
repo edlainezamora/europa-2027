@@ -36,7 +36,9 @@
   const PASSPORT_FEE = 257.25;  // R$, passaporte comum (PF, 2026)
   const ETA_GBP = 20;           // £, autorização do Reino Unido
   const ETIAS_EUR = 20;         // €, autorização da Europa (prevista para 2027)
-  const ESIM_USD = 30;          // US$, Nomad Europa 10 GB / 30 dias
+  const ESIM_EUR = 20.52;       // €, Nomad eSIM Europa 10 GB / 30 dias
+  const TUSUAL_EUR = 22.80;     // €, passe T-usual de Barcelona, ilimitado por 30 dias seguidos
+  const TMOBILITAT_EUR = 4.50;  // €, cartão T-mobilitat onde o passe é carregado (uma vez só)
   const HOTEL_LDN_GBP = [40, 90]; // £ por pessoa por noite, hotel simples dividindo o quarto
   const TICKETS_BCN_EUR = 44;   // € Sagrada Família (~26) + Park Güell (~18)
   const TICKETS_LDN_GBP = 65;   // £ London Eye (~30) + Torre de Londres (~35)
@@ -46,7 +48,7 @@
     senior: [270, 560],         // 60 a 70 anos
   };
 
-  const rates = { eur: 5.57, gbp: 6.58, usd: 4.99 }; // referência de out/2026, atualizada pela internet
+  const rates = { eur: 5.57, gbp: 6.58 }; // referência de out/2026, atualizada pela internet
 
   /* ---------- menus montados a partir das seções ---------- */
   const sections = $$('main section[data-label]');
@@ -265,7 +267,6 @@
     const ldnDays = num(daysLdn);
     const eurBRL = rates.eur * FEES;
     const gbpBRL = rates.gbp * FEES;
-    const usdBRL = rates.usd * FEES;
     const rows = [];
     const add = (cat, name, detail, orig, ppMin, ppMax = ppMin, gMin = ppMin * people, gMax = ppMax * people) => {
       rows.push({ cat, name, detail, orig, ppMin, ppMax, gMin, gMax });
@@ -282,8 +283,17 @@
       seniors > 0 ? INSURANCE.senior[1] : INSURANCE.young[1],
       insMin, insMax);
 
-    if (bcnDays) add('🍽️ Gastos do dia a dia', 'Barcelona', `${bcnDays} dias × €${dailyEur} (comida, transporte, extras)`, `€${fmtNum.format(bcnDays * dailyEur)}`, bcnDays * dailyEur * eurBRL);
+    if (bcnDays) add('🍽️ Gastos do dia a dia', 'Barcelona', `${bcnDays} dias × €${dailyEur} (comida e extras)`, `€${fmtNum.format(bcnDays * dailyEur)}`, bcnDays * dailyEur * eurBRL);
     if (ldnDays) add('🍽️ Gastos do dia a dia', 'Londres', `${ldnDays} dias × €${dailyEur} (comida, transporte, extras)`, `€${fmtNum.format(ldnDays * dailyEur)}`, ldnDays * dailyEur * eurBRL);
+
+    if (bcnDays) {
+      // o passe vale 30 dias seguidos a partir do primeiro uso (conta também os dias em Londres)
+      const passes = Math.ceil((bcnDays + ldnDays) / 30);
+      const passEur = passes * TUSUAL_EUR + TMOBILITAT_EUR;
+      add('🚇 Transporte em Barcelona', 'Passe T-usual',
+        `${passes === 1 ? '1 passe' : `${passes} passes`} de 30 dias (metrô, ônibus e trem à vontade, inclusive no aeroporto) + cartão T-mobilitat`,
+        `€${passEur.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`, passEur * eurBRL);
+    }
 
     if (bcnDays) add('🏨 Hospedagem', 'Barcelona', 'Em casa 🏠', '—', 0);
     if (ldnDays) {
@@ -292,7 +302,7 @@
         ldnDays * HOTEL_LDN_GBP[0] * gbpBRL, ldnDays * HOTEL_LDN_GBP[1] * gbpBRL);
     }
 
-    add('📶 Internet no celular', 'Chip virtual Nomad', 'Pacote Europa 10 GB, 30 dias', `US$ ${ESIM_USD}`, ESIM_USD * usdBRL);
+    add('📶 Internet no celular', 'Chip virtual Nomad eSIM', 'Pacote Europa 10 GB, 30 dias', `€${ESIM_EUR.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`, ESIM_EUR * eurBRL);
 
     if (bcnDays) add('🎟️ Ingressos (sugestão)', 'Barcelona', 'Sagrada Família e Park Güell', `€${TICKETS_BCN_EUR}`, TICKETS_BCN_EUR * eurBRL);
     if (ldnDays) add('🎟️ Ingressos (sugestão)', 'Londres', 'London Eye e Torre de Londres', `£${TICKETS_LDN_GBP}`, TICKETS_LDN_GBP * gbpBRL);
@@ -336,7 +346,6 @@
   const renderRates = () => {
     $$('[data-rate="eur"]').forEach((el) => { el.textContent = fmtBRL2.format(rates.eur); });
     $$('[data-rate="gbp"]').forEach((el) => { el.textContent = fmtBRL2.format(rates.gbp); });
-    $$('[data-rate="usd"]').forEach((el) => { el.textContent = fmtBRL2.format(rates.usd); });
     $$('[data-gbp]').forEach((el) => {
       el.textContent = `(≈ ${fmtBRL.format(Number(el.dataset.gbp) * rates.gbp)})`;
     });
@@ -348,7 +357,7 @@
     const ctrl = new AbortController();
     const timer = setTimeout(() => ctrl.abort(), 7000);
     try {
-      const res = await fetch('https://economia.awesomeapi.com.br/json/last/EUR-BRL,GBP-BRL,USD-BRL', { signal: ctrl.signal });
+      const res = await fetch('https://economia.awesomeapi.com.br/json/last/EUR-BRL,GBP-BRL', { signal: ctrl.signal });
       if (!res.ok) throw new Error(res.status);
       const data = await res.json();
       const eur = Number(data.EURBRL?.bid);
@@ -356,8 +365,6 @@
       if (!(eur > 0 && gbp > 0)) throw new Error('cotação inválida');
       rates.eur = eur;
       rates.gbp = gbp;
-      const usd = Number(data.USDBRL?.bid);
-      if (usd > 0) rates.usd = usd;
       const when = (data.EURBRL.create_date || '').split(' ');
       const [yy, mm, dd] = (when[0] || '').split('-');
       status.textContent = dd ? `atualizada em ${dd}/${mm}/${yy}, às ${(when[1] || '').slice(0, 5)}` : 'atualizada agora';
